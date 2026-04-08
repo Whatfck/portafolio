@@ -40,6 +40,10 @@ p {
   color: var(--primary);
 }
 
+#hero {
+  text-align: center;
+}
+
 .project-card {
   border: 1px solid var(--border);
   padding: 20px;
