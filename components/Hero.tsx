@@ -7,7 +7,7 @@ export default function Hero() {
           <h1>Daniel Perez</h1>
           <p className="hero-role">Estudiante Ing. Software</p>
           <p className="hero-copy">
-            Enfocado en backend, arquitectura y rendimiento para construir software robusto y soluciones eficientes.
+            Enfocado en software, redes y arquitectura de servidores para crear soluciones robustas y eficientes.
           </p>
 
           <div className="hero-actions">

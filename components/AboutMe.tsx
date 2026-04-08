@@ -1,32 +1,53 @@
 export default function AboutMe() {
   return (
     <section id="about" className="scroll-section about-section">
-      <h2>Sobre mi</h2>
+      <div className="about-header">
+        <h2>Sobre mi</h2>
+        <p className="about-kicker">Perfil tecnico</p>
+      </div>
 
-      <div className="about-text">
-        <p className="about-lead">
-          Soy Daniel Pérez, estudiante de ingeniería de software con un enfoque claro en
-          el desarrollo backend y la comprensión profunda de los sistemas.
-        </p>
+      <div className="about-layout">
+        <article className="about-main">
+          <p className="about-lead">
+            Soy Daniel Perez, estudiante de ingenieria de software con interes en construir
+            soluciones solidas y entender los sistemas de forma integral.
+          </p>
 
-        <p>
-          Me interesa especialmente entender cómo funcionan las aplicaciones más allá de
-          la superficie, desde la lógica del software hasta la infraestructura que las
-          soporta. Áreas como la ciberseguridad, el rendimiento y la arquitectura de
-          sistemas forman parte de lo que quiero desarrollar a largo plazo.
-        </p>
+          <p>
+            Me motiva comprender como funciona una aplicacion de extremo a extremo: logica,
+            rendimiento, redes y arquitectura de servidores en entornos reales.
+          </p>
 
-        <p>
-          Actualmente estoy construyendo proyectos que me permitan fortalecer mis bases
-          en desarrollo y explorar soluciones más eficientes, priorizando siempre el
-          entendimiento técnico sobre simplemente hacer que algo funcione.
-        </p>
+          <p>
+            Estoy fortaleciendo mis bases tecnicas mediante proyectos que conectan desarrollo
+            con infraestructura, priorizando estabilidad, eficiencia y escalabilidad.
+          </p>
 
-        <p>
-          Disfruto trabajar en la mejora continua de mis habilidades, experimentar con
-          nuevas tecnologías y enfrentar problemas que requieran análisis y pensamiento
-          crítico.
-        </p>
+          <div className="about-highlight">
+            <h3>Ahora mismo</h3>
+            <p>
+              Aprendiendo a disenar sistemas mas robustos, mejorar rendimiento y tomar
+              decisiones tecnicas con enfoque de largo plazo.
+            </p>
+          </div>
+        </article>
+
+        <aside className="about-side">
+          <article className="about-pill">
+            <h3>Intereses</h3>
+            <p>Redes, arquitectura de servidores, ciberseguridad y rendimiento.</p>
+          </article>
+
+          <article className="about-pill">
+            <h3>Enfoque</h3>
+            <p>Comprender el por que de cada solucion, no solo que funcione.</p>
+          </article>
+
+          <article className="about-pill">
+            <h3>Objetivo</h3>
+            <p>Construir software confiable, escalable y bien pensado.</p>
+          </article>
+        </aside>
       </div>
     </section>
   )
