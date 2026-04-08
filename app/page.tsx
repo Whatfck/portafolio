@@ -1,15 +1,19 @@
+import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
+import AboutMe from '@/components/AboutMe'
 import Projects from '@/components/Projects'
-import Skills from '@/components/Skills'
 import Contact from '@/components/Contact'
 
 export default function Home() {
   return (
-    <main className="container">
+    <>
+      <Navbar />
       <Hero />
-      <Projects />
-      <Skills />
-      <Contact />
-    </main>
+      <main className="container">
+        <AboutMe />
+        <Projects />
+        <Contact />
+      </main>
+    </>
   )
 }

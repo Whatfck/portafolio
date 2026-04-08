@@ -1,13 +1,34 @@
 export default function Hero() {
   return (
-    <section id="hero" style={{ textAlign: 'center' }}>
-      <h1>Daniel Perez</h1>
-      <p style={{ fontSize: '1.2rem', color: '#6b7280' }}>
-        Desarrollador Full Stack
-      </p>
-      <p style={{ marginTop: '1.5rem', color: '#9ca3af' }}>
-        Creando soluciones web modernas y eficientes
-      </p>
+    <section id="hero" className="hero">
+      <div className="hero-inner">
+        <div className="hero-content">
+          <h1>Daniel Perez</h1>
+          <p className="hero-role">Estudiante Ing. Software</p>
+          <p className="hero-copy">
+            Construyendo interfaces limpias y experiencias simples para la web.
+          </p>
+
+          <div className="hero-actions">
+            <a className="button button-linkedin" href="#" target="_blank" rel="noreferrer">
+              <span className="button-icon" aria-hidden="true">in</span>
+              LinkedIn
+            </a>
+            <a className="button button-github" href="#" target="_blank" rel="noreferrer">
+              <span className="button-icon" aria-hidden="true">gh</span>
+              GitHub
+            </a>
+            <a className="button button-cv" href="#" target="_blank" rel="noreferrer">
+              <span className="button-icon" aria-hidden="true">cv</span>
+              Ver CV
+            </a>
+          </div>
+        </div>
+
+        <div className="hero-photo" aria-label="Placeholder de foto">
+          <span>Foto</span>
+        </div>
+      </div>
     </section>
   )
 }
