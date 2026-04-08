@@ -1,5 +1,11 @@
 import type { Metadata } from 'next'
+import { Noto_Sans_Mono } from 'next/font/google'
 import './globals.css'
+
+const notoSansMono = Noto_Sans_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Daniel Perez | Portafolio',
@@ -13,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body>{children}</body>
+      <body className={notoSansMono.className}>{children}</body>
     </html>
   )
 }
