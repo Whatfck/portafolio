@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "buildCommand": "npm run vercel-build",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.ts"
+    }
+  ],
+  "functions": {
+    "api/index.ts": {
+      "includeFiles": ["src/views/**", "src/public/**"]
+    }
+  }
+}
