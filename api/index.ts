@@ -2,7 +2,7 @@ import { join } from 'path';
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import { NestExpressApplication } from '@nestjs/platform-express';
-import * as express from 'express';
+import express = require('express');
 import serverless from 'serverless-http';
 import { AppModule } from '../src/app.module';
 
