@@ -9,8 +9,15 @@ const links = [
   { href: '#contact', label: 'Contacto' },
 ]
 
+const mobileSectionLabels: Record<string, string> = {
+  about: 'Sobre mi',
+  projects: 'Proyectos',
+  contact: 'Contacto',
+}
+
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('hero')
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
 
   useEffect(() => {
     let ticking = false
@@ -57,12 +64,47 @@ export default function Navbar() {
     }
   }, [])
 
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem('theme')
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      setTheme(savedTheme)
+      return
+    }
+
+    setTheme(systemPrefersDark ? 'dark' : 'light')
+  }, [])
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
+
   const isScrolled = activeSection !== 'hero'
+  const currentMobileSection = mobileSectionLabels[activeSection]
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(nextTheme)
+    window.localStorage.setItem('theme', nextTheme)
+  }
 
   return (
     <header className={`site-header${isScrolled ? ' is-scrolled' : ''}`}>
       <div className="nav-shell">
         {isScrolled && <span className="nav-owner">Daniel Perez</span>}
+        {isScrolled && currentMobileSection && <span className="nav-mobile-section">{currentMobileSection}</span>}
+
+        <button
+          type="button"
+          className="nav-theme-toggle"
+          onClick={toggleTheme}
+          aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+          title={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
+        >
+          <i className={`fa-solid ${theme === 'dark' ? 'fa-sun' : 'fa-moon'}`} aria-hidden="true"></i>
+          <span>{theme === 'dark' ? 'Claro' : 'Oscuro'}</span>
+        </button>
 
         <nav className="navbar" aria-label="Navegacion principal">
           <ul className="navbar-links">

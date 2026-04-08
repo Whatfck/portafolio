@@ -12,16 +12,16 @@ export default function Hero() {
 
           <div className="hero-actions">
             <a className="button button-linkedin" href="https://www.linkedin.com/in/daniel-perez-blank" target="_blank" rel="noreferrer">
-              <span className="button-icon" aria-hidden="true">in</span>
-              LinkedIn
+              <i className="button-icon fa-brands fa-linkedin" aria-hidden="true"></i>
+              <span className="button-label">LinkedIn</span>
             </a>
             <a className="button button-github" href="https://github.com/Whatfck" target="_blank" rel="noreferrer">
-              <span className="button-icon" aria-hidden="true">gh</span>
-              GitHub
+              <i className="button-icon fa-brands fa-github" aria-hidden="true"></i>
+              <span className="button-label">GitHub</span>
             </a>
             <a className="button button-cv" href="#" target="_blank" rel="noreferrer">
-              <span className="button-icon" aria-hidden="true">cv</span>
-              Ver CV
+              <i className="button-icon fa-solid fa-file" aria-hidden="true"></i>
+              <span className="button-label">Ver CV</span>
             </a>
           </div>
         </div>
