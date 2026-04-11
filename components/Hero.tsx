@@ -34,7 +34,10 @@ export default function Hero({ lang }: { lang: Locale }) {
           <span>Foto</span>
         </div>
       </div>
+
+      <a href="#about" className="hero-scroll-cue" aria-label={lang === 'es' ? 'Ir abajo' : 'Scroll down'}>
+        <i className="fa-solid fa-chevron-down" aria-hidden="true"></i>
+      </a>
     </section>
   )
 }
-
