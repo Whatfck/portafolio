@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import '@fortawesome/fontawesome-free/css/all.min.css'
-import '../../app/globals.css'
+import '../../styles/globals.css'
 import { getDictionary, Locale } from '@/lib/dictionaries'
 
 export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {

@@ -16,7 +16,7 @@ export default function Testimonials({ lang }: { lang: Locale }) {
       <div className="testimonials-grid">
         {/* // Aqui el testimonio 1 */}
         <article className="testimonial-card">
-          <span className="testimonial-quote-icon">"</span>
+          <span className="testimonial-quote-icon">&quot;</span>
           <p>
             {dict.t1_text}
           </p>
@@ -26,7 +26,7 @@ export default function Testimonials({ lang }: { lang: Locale }) {
 
         {/* // Aqui el testimonio 2 */}
         <article className="testimonial-card">
-          <span className="testimonial-quote-icon">"</span>
+          <span className="testimonial-quote-icon">&quot;</span>
           <p>
             {dict.t2_text}
           </p>
@@ -36,7 +36,7 @@ export default function Testimonials({ lang }: { lang: Locale }) {
 
         {/* // Aqui el testimonio 3 */}
         <article className="testimonial-card">
-          <span className="testimonial-quote-icon">"</span>
+          <span className="testimonial-quote-icon">&quot;</span>
           <p>
             {dict.t3_text}
           </p>
