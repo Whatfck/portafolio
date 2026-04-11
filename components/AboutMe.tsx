@@ -1,54 +1,55 @@
-export default function AboutMe() {
+import { Locale, getDictionary } from '@/lib/dictionaries'
+
+export default function AboutMe({ lang }: { lang: Locale }) {
+  const dict = getDictionary(lang).about
+
   return (
     <section id="about" className="scroll-section about-section">
       <div className="about-header">
-        <h2>Sobre mi</h2>
-        <p className="about-kicker">Perfil tecnico</p>
+        <h2>{dict.title}</h2>
+        <p className="about-kicker">{dict.kicker}</p>
       </div>
 
       <div className="about-layout">
         <article className="about-main">
           <p className="about-lead">
-            Soy Daniel Perez, estudiante de ingenieria de software con interes en construir
-            soluciones solidas y entender los sistemas de forma integral.
+            {dict.lead}
           </p>
 
           <p>
-            Me motiva comprender como funciona una aplicacion de extremo a extremo: logica,
-            rendimiento, redes y arquitectura de servidores en entornos reales.
+            {dict.p1}
           </p>
 
           <p>
-            Estoy fortaleciendo mis bases tecnicas mediante proyectos que conectan desarrollo
-            con infraestructura, priorizando estabilidad, eficiencia y escalabilidad.
+            {dict.p2}
           </p>
 
           <div className="about-highlight">
-            <h3>Ahora mismo</h3>
+            <h3>{dict.highlight_title}</h3>
             <p>
-              Aprendiendo a disenar sistemas mas robustos, mejorar rendimiento y tomar
-              decisiones tecnicas con enfoque de largo plazo.
+              {dict.highlight_text}
             </p>
           </div>
         </article>
 
         <aside className="about-side">
           <article className="about-pill">
-            <h3>Intereses</h3>
-            <p>Redes, arquitectura de servidores, ciberseguridad y rendimiento.</p>
+            <h3>{dict.pill1_title}</h3>
+            <p>{dict.pill1_text}</p>
           </article>
 
           <article className="about-pill">
-            <h3>Enfoque</h3>
-            <p>Comprender el por que de cada solucion, no solo que funcione.</p>
+            <h3>{dict.pill2_title}</h3>
+            <p>{dict.pill2_text}</p>
           </article>
 
           <article className="about-pill">
-            <h3>Objetivo</h3>
-            <p>Construir software confiable, escalable y bien pensado.</p>
+            <h3>{dict.pill3_title}</h3>
+            <p>{dict.pill3_text}</p>
           </article>
         </aside>
       </div>
     </section>
   )
 }
+

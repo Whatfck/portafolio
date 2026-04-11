@@ -1,28 +1,40 @@
 "use client"
 
 import { useEffect, useState } from 'react'
+import { Locale, getDictionary } from '@/lib/dictionaries'
+import { useRouter, usePathname } from 'next/navigation'
 
-const links = [
-  { href: '#hero', label: 'Inicio' },
-  { href: '#about', label: 'Sobre mi' },
-  { href: '#projects', label: 'Proyectos' },
-  { href: '#contact', label: 'Contacto' },
-]
-
-const mobileSectionLabels: Record<string, string> = {
-  about: 'Sobre mi',
-  projects: 'Proyectos',
-  contact: 'Contacto',
-}
-
-export default function Navbar() {
+export default function Navbar({ lang }: { lang: Locale }) {
   const [activeSection, setActiveSection] = useState('hero')
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const dict = getDictionary(lang).navbar
+
+  const links = [
+    { href: '#hero', label: dict.hero },
+    { href: '#about', label: dict.about },
+    { href: '#skills', label: dict.skills },
+    { href: '#experience', label: dict.experience },
+    { href: '#projects', label: dict.projects },
+    { href: '#testimonials', label: dict.testimonials },
+    { href: '#contact', label: dict.contact },
+  ]
+
+  const mobileSectionLabels: Record<string, string> = {
+    about: dict.about,
+    skills: dict.skills,
+    experience: dict.experience,
+    projects: dict.projects,
+    testimonials: dict.testimonials,
+    contact: dict.contact,
+  }
 
   useEffect(() => {
     let ticking = false
 
-    const sectionIds = ['hero', 'about', 'projects', 'contact']
+    const sectionIds = ['hero', 'about', 'skills', 'experience', 'projects', 'testimonials', 'contact']
 
     const updateActiveSection = () => {
       const header = document.querySelector('.site-header') as HTMLElement | null
@@ -89,22 +101,49 @@ export default function Navbar() {
     window.localStorage.setItem('theme', nextTheme)
   }
 
+  const toggleLang = () => {
+    const targetLang = lang === 'en' ? 'es' : 'en'
+    const newPath = pathname.replace(`/${lang}`, `/${targetLang}`)
+    router.push(newPath)
+  }
+
   return (
     <header className={`site-header${isScrolled ? ' is-scrolled' : ''}`}>
       <div className="nav-shell">
         {isScrolled && <span className="nav-owner">Daniel Perez</span>}
         {isScrolled && currentMobileSection && <span className="nav-mobile-section">{currentMobileSection}</span>}
 
-        <button
-          type="button"
-          className="nav-theme-toggle"
-          onClick={toggleTheme}
-          aria-label={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
-          title={theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
-        >
-          <i className={`fa-solid ${theme === 'dark' ? 'fa-sun' : 'fa-moon'}`} aria-hidden="true"></i>
-          <span>{theme === 'dark' ? 'Claro' : 'Oscuro'}</span>
-        </button>
+        <div className="nav-theme-toggle" style={{ padding: '0.2rem', gap: 0, paddingRight: '0.4rem', paddingLeft: '0.4rem' }}>
+          <button
+            type="button"
+            onClick={toggleLang}
+            style={{
+              background: 'transparent', border: 'none', color: 'inherit', 
+              fontWeight: 700, padding: '0.2rem 0.4rem', cursor: 'pointer', 
+              fontSize: '0.78rem', fontFamily: 'inherit'
+            }}
+            aria-label="Cambiar idioma / Change language"
+            title="Cambiar idioma / Change language"
+          >
+            {lang === 'en' ? 'EN' : 'ES'}
+          </button>
+
+          <div style={{ width: '1px', height: '12px', background: 'currentColor', opacity: 0.25, margin: '0 0.1rem' }}></div>
+
+          <button
+            type="button"
+            onClick={toggleTheme}
+            style={{
+              background: 'transparent', border: 'none', color: 'inherit', 
+              padding: '0.2rem 0.4rem', cursor: 'pointer', fontSize: '0.85rem',
+              display: 'flex', alignItems: 'center', justifyContent: 'center'
+            }}
+            aria-label={theme === 'dark' ? dict.aria_light : dict.aria_dark}
+            title={theme === 'dark' ? dict.aria_light : dict.aria_dark}
+          >
+            <i className={`fa-solid ${theme === 'dark' ? 'fa-sun' : 'fa-moon'}`} aria-hidden="true"></i>
+          </button>
+        </div>
 
         <nav className="navbar" aria-label="Navegacion principal">
           <ul className="navbar-links">

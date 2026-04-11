@@ -1,12 +1,15 @@
-export default function Contact() {
+import { Locale, getDictionary } from '@/lib/dictionaries'
+
+export default function Contact({ lang }: { lang: Locale }) {
+  const dict = getDictionary(lang).contact
+
   return (
     <section id="contact" className="scroll-section contact-section">
       <div className="contact-header">
-        <h2>Contacto</h2>
-        <p className="contact-kicker">Hablemos</p>
+        <h2>{dict.title}</h2>
+        <p className="contact-kicker">{dict.kicker}</p>
         <p className="contact-intro">
-          Si quieres colaborar, tienes una propuesta o simplemente deseas conversar sobre
-          tecnologia, escribeme.
+          {dict.intro}
         </p>
       </div>
 
@@ -14,8 +17,8 @@ export default function Contact() {
         <aside className="contact-info">
           <article className="contact-card">
             <span className="contact-card-badge">01</span>
-            <h3>Email</h3>
-            <p className="contact-card-line">Canal principal para propuestas y colaboraciones.</p>
+            <h3>{dict.c1_title}</h3>
+            <p className="contact-card-line">{dict.c1_desc}</p>
             <a className="contact-card-link" href="mailto:danieleperez12@gmail.com">
               danieleperez12@gmail.com
             </a>
@@ -23,8 +26,8 @@ export default function Contact() {
 
           <article className="contact-card">
             <span className="contact-card-badge">02</span>
-            <h3>LinkedIn</h3>
-            <p className="contact-card-line">Contacto profesional y networking.</p>
+            <h3>{dict.c2_title}</h3>
+            <p className="contact-card-line">{dict.c2_desc}</p>
             <a
               className="contact-card-link"
               href="https://www.linkedin.com/in/daniel-perez-blank"
@@ -37,19 +40,20 @@ export default function Contact() {
 
           <article className="contact-card">
             <span className="contact-card-badge">03</span>
-            <h3>GitHub</h3>
-            <p className="contact-card-line">Repositorio de proyectos y experimentos.</p>
+            <h3>{dict.c3_title}</h3>
+            <p className="contact-card-line">{dict.c3_desc}</p>
             <a className="contact-card-link" href="https://github.com/Whatfck" target="_blank" rel="noreferrer">
               github.com/Whatfck
             </a>
           </article>
 
           <div className="contact-bar">
-            <p className="contact-note">Disponible para colaboraciones freelance y remotas.</p>
-            <p className="contact-note">Tiempo de respuesta estimado: 24 a 48 horas.</p>
+            <p className="contact-note">{dict.note1}</p>
+            <p className="contact-note">{dict.note2}</p>
           </div>
         </aside>
       </div>
     </section>
   )
 }
+

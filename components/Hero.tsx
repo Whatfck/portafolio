@@ -1,13 +1,17 @@
-export default function Hero() {
+import { Locale, getDictionary } from '@/lib/dictionaries'
+
+export default function Hero({ lang }: { lang: Locale }) {
+  const dict = getDictionary(lang).hero
+
   return (
     <section id="hero" className="hero">
       <div className="hero-inner">
         <div className="hero-content">
-          <p className="hero-eyebrow">Portafolio 2026</p>
-          <h1>Daniel Perez</h1>
-          <p className="hero-role">Estudiante Ing. Software</p>
+          <p className="hero-eyebrow">{dict.eyebrow}</p>
+          <h1>{dict.name}</h1>
+          <p className="hero-role">{dict.role}</p>
           <p className="hero-copy">
-            Enfocado en software, redes y arquitectura de servidores para crear soluciones robustas y eficientes.
+            {dict.copy}
           </p>
 
           <div className="hero-actions">
@@ -21,7 +25,7 @@ export default function Hero() {
             </a>
             <a className="button button-cv" href="#" target="_blank" rel="noreferrer">
               <i className="button-icon fa-solid fa-file" aria-hidden="true"></i>
-              <span className="button-label">Ver CV</span>
+              <span className="button-label">{dict.btn_cv}</span>
             </a>
           </div>
         </div>
@@ -33,3 +37,4 @@ export default function Hero() {
     </section>
   )
 }
+
