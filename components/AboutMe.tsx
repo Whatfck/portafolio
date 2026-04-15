@@ -30,6 +30,24 @@ export default function AboutMe({ lang }: { lang: Locale }) {
               {dict.highlight_text}
             </p>
           </div>
+
+          <div className="about-languages">
+            <h3>{dict.languages_title}</h3>
+            {dict.languages.map((lang: any, index: number) => (
+              <div key={index} className="language-item">
+                <div className="language-info">
+                  <span className="language-name">{lang.name}</span>
+                  <span className="language-level">{lang.label}</span>
+                </div>
+                <div className="language-bar-bg">
+                  <div 
+                    className="language-bar-fill" 
+                    style={{ width: lang.level }}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
         </article>
 
         <aside className="about-side">

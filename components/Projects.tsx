@@ -14,37 +14,24 @@ export default function Projects({ lang }: { lang: Locale }) {
       </div>
 
       <div className="projects-grid">
-        {/* // Aqui tu primer proyecto */}
-        <article className="project-card">
-          <h3>{dict.p1_title}</h3>
-          <p>
-            {dict.p1_desc}
-          </p>
-          <div className="project-links">
-            <a href="#" className="project-link" target="_blank" rel="noreferrer">
-              <i className="fa-brands fa-github" aria-hidden="true"></i> {dict.repo}
-            </a>
-            <a href="#" className="project-link" target="_blank" rel="noreferrer">
-              <i className="fa-solid fa-link" aria-hidden="true"></i> {dict.demo}
-            </a>
-          </div>
-        </article>
-
-        {/* // Aqui tu segundo proyecto */}
-        <article className="project-card">
-          <h3>{dict.p2_title}</h3>
-          <p>
-            {dict.p2_desc}
-          </p>
-          <div className="project-links">
-            <a href="#" className="project-link" target="_blank" rel="noreferrer">
-              <i className="fa-brands fa-github" aria-hidden="true"></i> {dict.repo}
-            </a>
-            <a href="#" className="project-link" target="_blank" rel="noreferrer">
-              <i className="fa-solid fa-link" aria-hidden="true"></i> {dict.demo}
-            </a>
-          </div>
-        </article>
+        {dict.items.map((project: any, index: number) => (
+          <article key={index} className="project-card">
+            <h3>{project.title}</h3>
+            <p>
+              {project.desc}
+            </p>
+            <div className="project-links">
+              <a href={project.repo} className="project-link" target="_blank" rel="noreferrer">
+                <i className="fa-brands fa-github" aria-hidden="true"></i> {dict.repo_label}
+              </a>
+              {project.demo !== '#' && (
+                <a href={project.demo} className="project-link" target="_blank" rel="noreferrer">
+                  <i className="fa-solid fa-link" aria-hidden="true"></i> {dict.demo_label}
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   )

@@ -26,6 +26,11 @@ export const dictionaries: Record<string, any> = {
       lead: 'Soy Daniel Perez, estudiante de ingenieria de software con interes en construir soluciones solidas y entender los sistemas de forma integral.',
       p1: 'Me motiva comprender como funciona una aplicacion de extremo a extremo: logica, rendimiento, redes y arquitectura de servidores en entornos reales.',
       p2: 'Estoy fortaleciendo mis bases tecnicas mediante proyectos que conectan desarrollo con infraestructura, priorizando estabilidad, eficiencia y escalabilidad.',
+      languages_title: 'Idiomas',
+      languages: [
+        { name: 'Español', level: '100%', label: 'Lengua materna' },
+        { name: 'Inglés', level: '50%', label: 'Intermedio (~50%)' }
+      ],
       highlight_title: 'Ahora mismo',
       highlight_text: 'Aprendiendo a disenar sistemas mas robustos, mejorar rendimiento y tomar decisiones tecnicas con enfoque de largo plazo.',
       pill1_title: 'Intereses',
@@ -61,12 +66,28 @@ export const dictionaries: Record<string, any> = {
       title: 'Proyectos',
       kicker: 'Mi codigo',
       intro: 'Una seleccion de trabajos en los que he aplicado mis conocimientos arquitectonicos y de desarrollo.',
-      p1_title: 'Nombre del Proyecto 1',
-      p1_desc: 'Descripcion breve del proyecto. Que problema resuelve y que tecnologias usaste (ej. Next.js, bases de datos, etc).',
-      p2_title: 'Nombre del Proyecto 2',
-      p2_desc: 'Una aplicacion demostrativa enfocada en escalabilidad y una interaccion de usuario simple.',
-      repo: 'Repo',
-      demo: 'Demo',
+      items: [
+        {
+          title: 'UniShop',
+          desc: 'Plataforma de comercio electrónico diseñada para la comunidad universitaria, facilitando la compra y venta de productos entre estudiantes.',
+          repo: 'https://github.com/Whatfck/UniShop',
+          demo: '#'
+        },
+        {
+          title: 'Reproductor Web',
+          desc: 'Aplicación de reproducción de audio moderna con interfaz intuitiva, soporte para listas de reproducción y controles avanzados.',
+          repo: 'https://github.com/Whatfck/reproductor-web',
+          demo: '#'
+        },
+        {
+          title: 'Portafolio Personal',
+          desc: 'Este mismo sitio web, desarrollado con Next.js y CSS moderno, enfocado en una experiencia de usuario y visualmente atractiva.',
+          repo: 'https://github.com/Whatfck/portafolio',
+          demo: '#'
+        }
+      ],
+      repo_label: 'Repo',
+      demo_label: 'Demo',
     },
     testimonials: {
       title: 'Testimonios',
@@ -126,6 +147,11 @@ export const dictionaries: Record<string, any> = {
       lead: 'I am Daniel Perez, a software engineering student interested in building solid solutions and understanding systems holistically.',
       p1: 'I am motivated by understanding how an application works end-to-end: logic, performance, networks, and server architecture in real environments.',
       p2: 'I am strengthening my technical foundations through projects that connect development with infrastructure, prioritizing stability, efficiency, and scalability.',
+      languages_title: 'Languages',
+      languages: [
+        { name: 'Spanish', level: '100%', label: 'Native language' },
+        { name: 'English', level: '50%', label: 'Intermediate (~50%)' }
+      ],
       highlight_title: 'Currently',
       highlight_text: 'Learning to design more robust systems, improve performance, and make long-term technical decisions.',
       pill1_title: 'Interests',
@@ -161,12 +187,28 @@ export const dictionaries: Record<string, any> = {
       title: 'Projects',
       kicker: 'My code',
       intro: 'A selection of works where I have applied my architectural and development knowledge.',
-      p1_title: 'Project Name 1',
-      p1_desc: 'Brief project description. What problem it solves and what technologies you used (e.g., Next.js, databases, etc).',
-      p2_title: 'Project Name 2',
-      p2_desc: 'A demonstrative application focused on scalability and simple user interaction.',
-      repo: 'Repo',
-      demo: 'Demo',
+      items: [
+        {
+          title: 'UniShop',
+          desc: 'E-commerce platform designed for the university community, facilitating the purchase and sale of products among students.',
+          repo: 'https://github.com/Whatfck/UniShop',
+          demo: '#'
+        },
+        {
+          title: 'Web Player',
+          desc: 'Modern audio playback application with an intuitive interface, playlist support, and advanced controls.',
+          repo: 'https://github.com/Whatfck/reproductor-web',
+          demo: '#'
+        },
+        {
+          title: 'Personal Portfolio',
+          desc: 'This very website, developed with Next.js and modern CSS, focused on a premium and visually attractive user experience.',
+          repo: 'https://github.com/Whatfck/portafolio',
+          demo: '#'
+        }
+      ],
+      repo_label: 'Repo',
+      demo_label: 'Demo',
     },
     testimonials: {
       title: 'Testimonials',

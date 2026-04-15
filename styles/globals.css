@@ -321,6 +321,73 @@ section {
   line-height: 1.7;
 }
 
+/* Languages Progress Bars */
+.about-languages {
+  margin-top: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-languages h3 {
+  margin: 0 0 0.5rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.language-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.language-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.language-name {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.language-level {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.language-bar-bg {
+  height: 8px;
+  width: 100%;
+  background: var(--accent-soft);
+  border-radius: 999px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.language-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 999px;
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 0 10px rgba(15, 118, 110, 0.2);
+}
+
+html[data-theme='dark'] .language-bar-bg {
+  background: rgba(148, 163, 184, 0.1);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+html[data-theme='dark'] .language-level {
+  color: #94a3b8;
+}
+
 /* ---- Hero animations ---- */
 @keyframes hero-gradient {
   0%   { background-position: 0% 50%; }
