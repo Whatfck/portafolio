@@ -11,40 +11,33 @@ export default function Skills({ lang }: { lang: Locale }) {
         <p className="section-intro">
           {dict.intro}
         </p>
+        <div className="section-focus-badge">
+          <p>{dict.focus}</p>
+        </div>
       </div>
 
-      <div className="skills-grid">
-        {/* // Categoria 1 */}
-        <article className="skill-category">
-          <h3>{dict.cat1_title}</h3>
-          <div className="skills-list">
-            <span className="skill-pill">React</span>
-            <span className="skill-pill">Next.js</span>
-            <span className="skill-pill">Tailwind CSS</span>
-            <span className="skill-pill">JavaScript / TypeScript</span>
-          </div>
-        </article>
+      <div className="bento-grid">
+        {dict.categories.map((category: any, idx: number) => {
+          // Logic for bento sizing based on category title
+          const titleLower = category.title.toLowerCase();
+          const isMain = titleLower.includes('sistema') || titleLower.includes('infra');
+          const isWide = titleLower.includes('desarrollo') || titleLower.includes('web');
+          
+          let bentoClass = 'bento-item';
+          if (isMain) bentoClass += ' bento-large tech-card';
+          else if (isWide) bentoClass += ' bento-wide';
 
-        {/* // Categoria 2 */}
-        <article className="skill-category">
-          <h3>{dict.cat2_title}</h3>
-          <div className="skills-list">
-            <span className="skill-pill">Node.js / Express</span>
-            <span className="skill-pill">Docker</span>
-            <span className="skill-pill">Linux</span>
-            <span className="skill-pill">SQL</span>
-          </div>
-        </article>
-
-        {/* // Categoria 3 */}
-        <article className="skill-category">
-          <h3>{dict.cat3_title}</h3>
-          <div className="skills-list">
-            {dict.skills_cat3.map((skill: string, index: number) => (
-              <span key={index} className="skill-pill">{skill}</span>
-            ))}
-          </div>
-        </article>
+          return (
+            <article key={idx} className={bentoClass}>
+              <h3>{category.title}</h3>
+              <div className="skills-list">
+                {category.items.map((item: string, itemIdx: number) => (
+                  <span key={itemIdx} className="skill-pill">{item}</span>
+                ))}
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   )

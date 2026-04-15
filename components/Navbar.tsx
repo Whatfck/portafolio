@@ -113,31 +113,23 @@ export default function Navbar({ lang }: { lang: Locale }) {
         {isScrolled && <span className="nav-owner">Daniel Perez</span>}
         {isScrolled && currentMobileSection && <span className="nav-mobile-section">{currentMobileSection}</span>}
 
-        <div className="nav-theme-toggle" style={{ padding: '0.2rem', gap: 0, paddingRight: '0.4rem', paddingLeft: '0.4rem' }}>
+        <div className="nav-theme-toggle">
           <button
             type="button"
+            className="nav-toggle-btn"
             onClick={toggleLang}
-            style={{
-              background: 'transparent', border: 'none', color: 'inherit', 
-              fontWeight: 700, padding: '0.2rem 0.4rem', cursor: 'pointer', 
-              fontSize: '0.78rem', fontFamily: 'inherit'
-            }}
             aria-label="Cambiar idioma / Change language"
             title="Cambiar idioma / Change language"
           >
             {lang === 'en' ? 'EN' : 'ES'}
           </button>
 
-          <div style={{ width: '1px', height: '12px', background: 'currentColor', opacity: 0.25, margin: '0 0.1rem' }}></div>
+          <div className="nav-toggle-divider"></div>
 
           <button
             type="button"
+            className="nav-toggle-btn"
             onClick={toggleTheme}
-            style={{
-              background: 'transparent', border: 'none', color: 'inherit', 
-              padding: '0.2rem 0.4rem', cursor: 'pointer', fontSize: '0.85rem',
-              display: 'flex', alignItems: 'center', justifyContent: 'center'
-            }}
             aria-label={theme === 'dark' ? dict.aria_light : dict.aria_dark}
             title={theme === 'dark' ? dict.aria_light : dict.aria_dark}
           >

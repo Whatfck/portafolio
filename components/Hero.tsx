@@ -7,7 +7,11 @@ export default function Hero({ lang }: { lang: Locale }) {
     <section id="hero" className="hero">
       <div className="hero-inner">
         <div className="hero-content">
-          <p className="hero-eyebrow">{dict.eyebrow}</p>
+          {dict.eyebrow && (
+            <p className="hero-eyebrow">
+              <span>{dict.eyebrow}</span>
+            </p>
+          )}
           <h1>{dict.name}</h1>
           <p className="hero-role">{dict.role}</p>
           <p className="hero-copy">
@@ -30,8 +34,10 @@ export default function Hero({ lang }: { lang: Locale }) {
           </div>
         </div>
 
-        <div className="hero-photo" aria-label="Placeholder de foto">
-          <span>Foto</span>
+        <div className="hero-photo-wrapper">
+          <div className="hero-photo tech-card" aria-label="Foto de Daniel Perez">
+            <span>{dict.name}</span>
+          </div>
         </div>
       </div>
 

@@ -14,25 +14,16 @@ export default function Experience({ lang }: { lang: Locale }) {
       </div>
 
       <div className="experience-timeline">
-        {/* // Aqui tu experiencia mas reciente */}
-        <article className="experience-item">
-          <p className="experience-date">{dict.current_date}</p>
-          <h3>{dict.current_role}</h3>
-          <p className="experience-company">{dict.current_company}</p>
-          <p>
-            {dict.current_desc}
-          </p>
-        </article>
-
-        {/* // Aqui tu universidad */}
-        <article className="experience-item">
-          <p className="experience-date">{dict.edu_date}</p>
-          <h3>{dict.edu_role}</h3>
-          <p className="experience-company">{dict.edu_company}</p>
-          <p>
-            {dict.edu_desc}
-          </p>
-        </article>
+        {dict.items.map((item: any, idx: number) => (
+          <article key={idx} className="experience-item tech-card">
+            <p className="experience-date">{item.date}</p>
+            <h3>{item.role}</h3>
+            <p className="experience-company">{item.company}</p>
+            <p>
+              {item.desc}
+            </p>
+          </article>
+        ))}
       </div>
     </section>
   )

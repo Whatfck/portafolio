@@ -14,58 +14,77 @@ export const dictionaries: Record<string, any> = {
       aria_dark: 'Cambiar a modo oscuro',
     },
     hero: {
-      eyebrow: 'Portafolio 2026',
+      eyebrow: '',
       name: 'Daniel Perez',
       role: 'Estudiante Ing. Software',
       copy: 'Enfocado en software, redes y arquitectura de servidores para crear soluciones robustas y eficientes.',
       btn_cv: 'Ver CV',
     },
     about: {
-      title: 'Sobre mi',
-      kicker: 'Perfil tecnico',
-      lead: 'Soy Daniel Perez, estudiante de ingenieria de software con interes en construir soluciones solidas y entender los sistemas de forma integral.',
-      p1: 'Me motiva comprender como funciona una aplicacion de extremo a extremo: logica, rendimiento, redes y arquitectura de servidores en entornos reales.',
-      p2: 'Estoy fortaleciendo mis bases tecnicas mediante proyectos que conectan desarrollo con infraestructura, priorizando estabilidad, eficiencia y escalabilidad.',
+      title: 'Sobre mí',
+      kicker: 'Mi perfil',
+      lead: 'Soy Daniel Pérez, estudiante de Ingeniería de Software con interés en el desarrollo de sistemas y la infraestructura que los soporta.',
+      p1: 'Me enfoco en entender cómo funcionan las aplicaciones de extremo a extremo, desde la lógica hasta su despliegue, incluyendo redes y entornos Linux.',
+      p2: 'Actualmente estoy fortaleciendo mis bases técnicas mediante proyectos prácticos, especialmente en sistemas, contenedores y exposición de servicios, buscando construir soluciones estables y bien estructuradas.',
       languages_title: 'Idiomas',
       languages: [
         { name: 'Español', level: '100%', label: 'Lengua materna' },
         { name: 'Inglés', level: '50%', label: 'Intermedio (~50%)' }
       ],
-      highlight_title: 'Ahora mismo',
-      highlight_text: 'Aprendiendo a disenar sistemas mas robustos, mejorar rendimiento y tomar decisiones tecnicas con enfoque de largo plazo.',
-      pill1_title: 'Intereses',
-      pill1_text: 'Redes, arquitectura de servidores, ciberseguridad y rendimiento.',
-      pill2_title: 'Enfoque',
-      pill2_text: 'Comprender el por que de cada solucion, no solo que funcione.',
-      pill3_title: 'Objetivo',
-      pill3_text: 'Construir software confiable, escalable y bien pensado.',
+      highlight_title: 'Enfoque actual',
+      highlight_text: 'Construyendo una base sólida en arquitectura de red y administración de servidores para desplegar servicios de forma profesional.',
+      pill1_title: '🚀 Enfoque',
+      pill1_text: 'Comprender el funcionamiento de los sistemas más allá de su implementación, priorizando decisiones técnicas sostenibles y bien fundamentadas.',
+      pill2_title: '🎯 Objetivo',
+      pill2_text: 'Desarrollar software confiable y escalable, con una base sólida en sistemas e infraestructura.',
+      pill3_title: '💡 Intereses',
+      pill3_text: 'Redes, Infraestructura, Ciberseguridad y Rendimiento de sistemas.',
     },
     skills: {
       title: 'Habilidades',
-      kicker: 'Herramientas',
-      intro: 'Tecnologias y conceptos con los que trabajo habitualmente para construir soluciones solidas.',
-      cat1_title: 'Frontend',
-      cat2_title: 'Backend & Infraestructura',
-      cat3_title: 'Otras Competencias',
-      skills_cat3: ['Git / Github', 'Arquitecturas red', 'Resolucion de problemas', 'Trabajo en equipo']
+      kicker: 'Mi arsenal',
+      focus: 'Enfoque: Interés en sistemas, redes e infraestructura, con experiencia práctica en entornos Linux y despliegue de servicios.',
+      intro: 'Tecnologías y conceptos con los que trabajo habitualmente para construir soluciones robustas y seguras.',
+      categories: [
+        {
+          title: 'Sistemas e Infraestructura',
+          items: ['Linux (Fedora/Ubuntu Server)', 'Docker', 'Entornos de desarrollo', 'Despliegue de servicios']
+        },
+        {
+          title: 'Redes',
+          items: ['OpenWrt', 'Reverse Proxy', 'DNS (Pi-hole/AdGuard)', 'VPN', 'Nmap']
+        },
+        {
+          title: 'Desarrollo Web',
+          items: ['React / Next.js', 'Tailwind CSS', 'JavaScript / TypeScript', 'Node.js / Express', 'Django', 'APIs REST']
+        },
+        {
+          title: 'Bases de Datos',
+          items: ['PostgreSQL', 'SQLite']
+        },
+        {
+          title: 'Herramientas',
+          items: ['Git / GitHub', 'Figma', 'Postman']
+        }
+      ]
     },
     experience: {
       title: 'Experiencia',
       kicker: 'Trayectoria',
-      intro: 'Un resumen de mi formacion academica y mi experiencia profesional en el ambito de desarrollo tech.',
-      current_date: 'Ene 2024 - Presente',
-      current_role: 'Desarrollador Junior / Practicas',
-      current_company: 'Nombre de la Empresa',
-      current_desc: 'Desarrollo de nuevas funcionalidades, optimizacion de codigo y colaboracion con el equipo en entornos de despliegue.',
-      edu_date: 'Ago 2021 - 2026',
-      edu_role: 'Estudiante de Ingenieria de Software',
-      edu_company: 'Nombre de tu Universidad',
-      edu_desc: 'Formacion integral en desarrollo de software, arquitectura de computadoras, redes y bases de datos.',
+      intro: 'Mi formación académica enfocada en la ingeniería de software y la especialización técnica.',
+      items: [
+        {
+          date: '2024 - 2028',
+          role: 'Estudiante de Ingeniería de Software',
+          company: 'Universidad',
+          desc: 'Formación integral en desarrollo de software, arquitectura de sistemas y redes de computadoras.'
+        }
+      ]
     },
     projects: {
       title: 'Proyectos',
       kicker: 'Mi codigo',
-      intro: 'Una seleccion de trabajos en los que he aplicado mis conocimientos arquitectonicos y de desarrollo.',
+      intro: 'Una seleccion de trabajos en los que he aplicado mis conocimientos.',
       items: [
         {
           title: 'UniShop',
@@ -77,12 +96,6 @@ export const dictionaries: Record<string, any> = {
           title: 'Reproductor Web',
           desc: 'Aplicación de reproducción de audio moderna con interfaz intuitiva, soporte para listas de reproducción y controles avanzados.',
           repo: 'https://github.com/Whatfck/reproductor-web',
-          demo: '#'
-        },
-        {
-          title: 'Portafolio Personal',
-          desc: 'Este mismo sitio web, desarrollado con Next.js y CSS moderno, enfocado en una experiencia de usuario y visualmente atractiva.',
-          repo: 'https://github.com/Whatfck/portafolio',
           demo: '#'
         }
       ],
@@ -135,7 +148,7 @@ export const dictionaries: Record<string, any> = {
       aria_dark: 'Switch to dark mode',
     },
     hero: {
-      eyebrow: 'Portfolio 2026',
+      eyebrow: '',
       name: 'Daniel Perez',
       role: 'Software Engineering Student',
       copy: 'Focused on software, networks, and server architecture to build robust and efficient solutions.',
@@ -143,45 +156,64 @@ export const dictionaries: Record<string, any> = {
     },
     about: {
       title: 'About me',
-      kicker: 'Technical profile',
-      lead: 'I am Daniel Perez, a software engineering student interested in building solid solutions and understanding systems holistically.',
-      p1: 'I am motivated by understanding how an application works end-to-end: logic, performance, networks, and server architecture in real environments.',
-      p2: 'I am strengthening my technical foundations through projects that connect development with infrastructure, prioritizing stability, efficiency, and scalability.',
+      kicker: 'My profile',
+      lead: 'I am Daniel Pérez, a Software Engineering student with an interest in system development and the infrastructure that supports them.',
+      p1: 'I focus on understanding how applications work end-to-end, from logic to deployment, including networking and Linux environments.',
+      p2: 'Currently, I am strengthening my technical foundations through practical projects, specifically in systems, containers, and service exposure, seeking to build stable and well-structured solutions.',
       languages_title: 'Languages',
       languages: [
         { name: 'Spanish', level: '100%', label: 'Native language' },
         { name: 'English', level: '50%', label: 'Intermediate (~50%)' }
       ],
-      highlight_title: 'Currently',
-      highlight_text: 'Learning to design more robust systems, improve performance, and make long-term technical decisions.',
-      pill1_title: 'Interests',
-      pill1_text: 'Networks, server architecture, cybersecurity, and performance.',
-      pill2_title: 'Focus',
-      pill2_text: 'Understanding why each solution works, not just making it work.',
-      pill3_title: 'Goal',
-      pill3_text: 'To build reliable, scalable, and well-thought-out software.',
+      highlight_title: 'Current focus',
+      highlight_text: 'Building a solid foundation in network architecture and server administration to deploy services professionally.',
+      pill1_title: '🚀 Focus',
+      pill1_text: 'Understanding the inner workings of systems beyond implementation, prioritizing sustainable and well-founded technical decisions.',
+      pill2_title: '🎯 Goal',
+      pill2_text: 'To develop reliable and scalable software with a solid foundation in systems and infrastructure.',
+      pill3_title: '💡 Interests',
+      pill3_text: 'Networking, Infrastructure, Cybersecurity, and System performance.',
     },
     skills: {
       title: 'Skills',
       kicker: 'Tools',
-      intro: 'Technologies and concepts I regularly work with to build solid solutions.',
-      cat1_title: 'Frontend',
-      cat2_title: 'Backend & Infrastructure',
-      cat3_title: 'Other Competencies',
-      skills_cat3: ['Git / Github', 'Network Architectures', 'Problem Solving', 'Teamwork']
+      focus: 'Focus: Interest in systems, networks, and infrastructure, with practical experience in Linux environments and service deployment.',
+      intro: 'Technologies and concepts I regularly work with to build robust and secure solutions.',
+      categories: [
+        {
+          title: 'Systems & Infrastructure',
+          items: ['Linux (Fedora/Ubuntu Server)', 'Docker', 'Development Environments', 'Service Deployment']
+        },
+        {
+          title: 'Networking',
+          items: ['OpenWrt', 'Reverse Proxy', 'DNS (Pi-hole/AdGuard)', 'VPN', 'Nmap']
+        },
+        {
+          title: 'Web Development',
+          items: ['React / Next.js', 'Tailwind CSS', 'JavaScript / TypeScript', 'Node.js / Express', 'Django', 'REST APIs']
+        },
+        {
+          title: 'Databases',
+          items: ['PostgreSQL', 'SQLite']
+        },
+        {
+          title: 'Tools',
+          items: ['Git / GitHub', 'Figma', 'Postman']
+        }
+      ]
     },
     experience: {
       title: 'Experience',
-      kicker: 'Career path',
-      intro: 'A summary of my academic background and professional experience in the tech development field.',
-      current_date: 'Jan 2024 - Present',
-      current_role: 'Junior Developer / Intern',
-      current_company: 'Company Name',
-      current_desc: 'Development of new features, code optimization, and team collaboration in deployment environments.',
-      edu_date: 'Aug 2021 - 2026',
-      edu_role: 'Software Engineering Student',
-      edu_company: 'Your University Name',
-      edu_desc: 'Comprehensive training in software development, computer architecture, networks, and databases.',
+      kicker: 'Path',
+      intro: 'My academic training focused on software engineering and technical specialization.',
+      items: [
+        {
+          date: '2024 - 2028 (expected)',
+          role: 'Software Engineering Student',
+          company: 'University',
+          desc: 'Comprehensive training in software development, systems architecture, and computer networks.'
+        }
+      ]
     },
     projects: {
       title: 'Projects',
@@ -198,12 +230,6 @@ export const dictionaries: Record<string, any> = {
           title: 'Web Player',
           desc: 'Modern audio playback application with an intuitive interface, playlist support, and advanced controls.',
           repo: 'https://github.com/Whatfck/reproductor-web',
-          demo: '#'
-        },
-        {
-          title: 'Personal Portfolio',
-          desc: 'This very website, developed with Next.js and modern CSS, focused on a premium and visually attractive user experience.',
-          repo: 'https://github.com/Whatfck/portafolio',
           demo: '#'
         }
       ],

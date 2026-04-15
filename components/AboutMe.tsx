@@ -51,17 +51,17 @@ export default function AboutMe({ lang }: { lang: Locale }) {
         </article>
 
         <aside className="about-side">
-          <article className="about-pill">
+          <article className="about-pill tech-card">
             <h3>{dict.pill1_title}</h3>
             <p>{dict.pill1_text}</p>
           </article>
 
-          <article className="about-pill">
+          <article className="about-pill tech-card">
             <h3>{dict.pill2_title}</h3>
             <p>{dict.pill2_text}</p>
           </article>
 
-          <article className="about-pill">
+          <article className="about-pill tech-card">
             <h3>{dict.pill3_title}</h3>
             <p>{dict.pill3_text}</p>
           </article>
