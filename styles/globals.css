@@ -1078,6 +1078,14 @@ html[data-theme='dark'] .tech-card::after {
     -webkit-tap-highlight-color: transparent;
   }
 
+  .navbar-links {
+    display: none;
+  }
+
+  .nav-theme-toggle {
+    margin-left: auto;
+  }
+
   .nav-mobile-toggle-icon {
     font-size: 0.86rem;
     line-height: 1;

@@ -26,6 +26,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
   ]
 
   const mobileSectionLabels: Record<string, string> = {
+    hero: dict.hero,
     about: dict.about,
     skills: dict.skills,
     experience: dict.experience,
@@ -194,7 +195,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
   return (
     <header className={`site-header${isScrolled ? ' is-scrolled' : ''}`}>
       <div className="nav-shell">
-        {isScrolled && currentMobileSection && (
+        {currentMobileSection && (
           <button 
             className="nav-mobile-section"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
