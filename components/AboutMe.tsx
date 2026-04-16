@@ -65,6 +65,12 @@ export default function AboutMe({ lang }: { lang: Locale }) {
             <h3>{dict.pill3_title}</h3>
             <p>{dict.pill3_text}</p>
           </article>
+
+          <article className="about-pill tech-card">
+            <h3>{dict.location_title}</h3>
+            <p className="about-location-value">{dict.location_value}</p>
+            <p className="about-location-note">{dict.location_note}</p>
+          </article>
         </aside>
       </div>
     </section>

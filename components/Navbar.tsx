@@ -6,7 +6,10 @@ import { useRouter, usePathname } from 'next/navigation'
 
 export default function Navbar({ lang }: { lang: Locale }) {
   const [activeSection, setActiveSection] = useState('hero')
-  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const [themeMode, setThemeMode] = useState<'system' | 'light' | 'dark'>(() => {
+    return 'system'
+  })
+  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light')
   const router = useRouter()
   const pathname = usePathname()
 
@@ -107,20 +110,38 @@ export default function Navbar({ lang }: { lang: Locale }) {
   }, [activeSection, lang])
 
   useEffect(() => {
-    const savedTheme = window.localStorage.getItem('theme')
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-
-    if (savedTheme === 'dark' || savedTheme === 'light') {
-      setTheme(savedTheme)
-      return
-    }
-
-    setTheme(systemPrefersDark ? 'dark' : 'light')
+    setThemeMode('system')
+    window.localStorage.setItem('theme-mode', 'system')
   }, [])
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-  }, [theme])
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+
+    const applyTheme = () => {
+      const nextTheme = themeMode === 'system'
+        ? (mediaQuery.matches ? 'dark' : 'light')
+        : themeMode
+
+      setResolvedTheme(nextTheme)
+      document.documentElement.setAttribute('data-theme', nextTheme)
+    }
+
+    applyTheme()
+
+    if (themeMode !== 'system') {
+      return
+    }
+
+    const onSystemThemeChange = () => {
+      applyTheme()
+    }
+
+    mediaQuery.addEventListener('change', onSystemThemeChange)
+
+    return () => {
+      mediaQuery.removeEventListener('change', onSystemThemeChange)
+    }
+  }, [themeMode])
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
@@ -153,9 +174,15 @@ export default function Navbar({ lang }: { lang: Locale }) {
   const currentMobileSection = mobileSectionLabels[activeSection]
 
   const toggleTheme = () => {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark'
-    setTheme(nextTheme)
-    window.localStorage.setItem('theme', nextTheme)
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const currentTheme = themeMode === 'system'
+      ? (systemPrefersDark ? 'dark' : 'light')
+      : themeMode
+    const nextMode = currentTheme === 'dark' ? 'light' : 'dark'
+
+    setThemeMode(nextMode)
+    window.localStorage.setItem('theme-mode', 'system')
+    document.documentElement.setAttribute('data-theme', nextMode)
   }
 
   const toggleLang = () => {
@@ -243,10 +270,10 @@ export default function Navbar({ lang }: { lang: Locale }) {
               type="button"
               className="nav-toggle-btn"
               onClick={toggleTheme}
-              aria-label={theme === 'dark' ? dict.aria_light : dict.aria_dark}
-              title={theme === 'dark' ? dict.aria_light : dict.aria_dark}
+              aria-label={resolvedTheme === 'dark' ? dict.aria_light : dict.aria_dark}
+              title={resolvedTheme === 'dark' ? dict.aria_light : dict.aria_dark}
             >
-              <i className={`fa-solid ${theme === 'dark' ? 'fa-sun' : 'fa-moon'}`} aria-hidden="true"></i>
+              <i className={`fa-solid ${resolvedTheme === 'dark' ? 'fa-sun' : 'fa-moon'}`} aria-hidden="true"></i>
             </button>
           </div>
         </nav>

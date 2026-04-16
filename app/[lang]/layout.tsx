@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { Source_Sans_3 } from 'next/font/google'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import '../../styles/globals.css'
@@ -26,7 +27,22 @@ export default function RootLayout({
   params: { lang: string }
 }) {
   return (
-    <html lang={lang} className={`${sourceSans.variable}`}>
+    <html lang={lang} className={`${sourceSans.variable}`} suppressHydrationWarning>
+      <head>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`(() => {
+            try {
+              const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+              const theme = systemPrefersDark ? 'dark' : 'light';
+
+              window.localStorage.setItem('theme-mode', 'system');
+              document.documentElement.setAttribute('data-theme', theme);
+            } catch (error) {
+              document.documentElement.setAttribute('data-theme', 'light');
+            }
+          })();`}
+        </Script>
+      </head>
       <body>{children}</body>
     </html>
   )

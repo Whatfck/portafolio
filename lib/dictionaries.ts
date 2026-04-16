@@ -23,6 +23,9 @@ export const dictionaries: Record<string, any> = {
     about: {
       title: 'Sobre mí',
       kicker: 'Mi perfil',
+      location_title: 'Ubicación',
+      location_value: 'Colombia · UTC-5',
+      location_note: 'Hora local de referencia para coordinación y trabajo remoto.',
       lead: 'Soy Daniel Pérez, estudiante de Ingeniería de Software con interés en el desarrollo de sistemas y la infraestructura que los soporta.',
       p1: 'Me enfoco en entender cómo funcionan las aplicaciones de extremo a extremo, desde la lógica hasta su despliegue, incluyendo redes y entornos Linux.',
       p2: 'Actualmente construyo mis bases técnicas a través de proyectos prácticos orientados a despliegues reales, virtualización y automatización de procesos.',
@@ -163,6 +166,9 @@ export const dictionaries: Record<string, any> = {
     about: {
       title: 'About me',
       kicker: 'My profile',
+      location_title: 'Location',
+      location_value: 'Colombia · UTC-5',
+      location_note: 'Local reference time for coordination and remote work.',
       lead: 'I am Daniel Pérez, a Software Engineering student with an interest in system development and the infrastructure that supports them.',
       p1: 'I focus on understanding how applications work end-to-end, from logic to deployment, including networking and Linux environments.',
       p2: 'Currently, I am building my technical foundations through hands-on projects focused on real-world deployments, virtualization, and process automation.',

@@ -1,7 +1,13 @@
+"use client"
+
+import { useState } from 'react'
 import { Locale, getDictionary } from '@/lib/dictionaries'
 
 export default function Skills({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang).skills
+  const [activeCategoryIndex, setActiveCategoryIndex] = useState(0)
+
+  const activeCategory = dict.categories[activeCategoryIndex] ?? dict.categories[0]
 
   return (
     <section id="skills" className="scroll-section">
@@ -16,6 +22,31 @@ export default function Skills({ lang }: { lang: Locale }) {
         </div>
       </div>
 
+      <div className="skills-mobile-switcher" role="tablist" aria-label="Categorias de habilidades">
+        {dict.categories.map((category: any, idx: number) => (
+          <button
+            key={`skills-tab-${idx}`}
+            type="button"
+            role="tab"
+            aria-selected={activeCategoryIndex === idx}
+            aria-controls="skills-mobile-panel"
+            className={`skills-mobile-btn${activeCategoryIndex === idx ? ' is-active' : ''}`}
+            onClick={() => setActiveCategoryIndex(idx)}
+          >
+            {category.title}
+          </button>
+        ))}
+      </div>
+
+      <article id="skills-mobile-panel" className="skills-mobile-panel tech-card" key={activeCategoryIndex}>
+        <h3>{activeCategory.title}</h3>
+        <div className="skills-list">
+          {activeCategory.items.map((item: string, itemIdx: number) => (
+            <span key={`mobile-item-${itemIdx}`} className="skill-pill">{item}</span>
+          ))}
+        </div>
+      </article>
+
       <div className="bento-grid">
         {dict.categories.map((category: any, idx: number) => {
           // Logic for bento sizing based on category title
@@ -24,7 +55,7 @@ export default function Skills({ lang }: { lang: Locale }) {
           const isWide = titleLower.includes('desarrollo') || titleLower.includes('web');
           
           let bentoClass = 'bento-item';
-          if (isMain) bentoClass += ' bento-large tech-card';
+          if (isMain) bentoClass += ' bento-wide tech-card';
           else if (isWide) bentoClass += ' bento-wide';
 
           return (
