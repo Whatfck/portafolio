@@ -122,6 +122,33 @@ export default function Navbar({ lang }: { lang: Locale }) {
     document.documentElement.setAttribute('data-theme', theme)
   }, [theme])
 
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      return
+    }
+
+    const onResize = () => {
+      if (window.innerWidth > 768) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [isMobileMenuOpen])
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false)
+  }, [activeSection])
+
   const isScrolled = activeSection !== 'hero'
   const currentMobileSection = mobileSectionLabels[activeSection]
 
@@ -148,7 +175,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
             aria-label="Toggle mobile menu"
           >
             {currentMobileSection}
-            <i className={`fa-solid ${isMobileMenuOpen ? 'fa-xmark' : 'fa-chevron-down'}`} style={{ marginLeft: '0.4rem', fontSize: '0.8em' }}></i>
+            <i className={`nav-mobile-toggle-icon fa-solid ${isMobileMenuOpen ? 'fa-xmark' : 'fa-angle-down'}`}></i>
           </button>
         )}
 

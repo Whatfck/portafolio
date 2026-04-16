@@ -42,7 +42,7 @@ export default function Hero({ lang }: { lang: Locale }) {
       </div>
 
       <a href="#about" className="hero-scroll-cue" aria-label={lang === 'es' ? 'Ir abajo' : 'Scroll down'}>
-        <i className="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        <i className="fa-solid fa-angle-down" aria-hidden="true"></i>
       </a>
     </section>
   )
