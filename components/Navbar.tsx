@@ -195,7 +195,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
   return (
     <header className={`site-header${isScrolled ? ' is-scrolled' : ''}`}>
       <div className="nav-shell">
-        {currentMobileSection && (
+        {currentMobileSection && activeSection !== 'hero' && (
           <button 
             className="nav-mobile-section"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
