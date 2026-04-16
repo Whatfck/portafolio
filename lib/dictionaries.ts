@@ -97,6 +97,12 @@ export const dictionaries: Record<string, any> = {
           desc: 'Aplicación de reproducción de audio moderna con interfaz intuitiva, soporte para listas de reproducción y controles avanzados.',
           repo: 'https://github.com/Whatfck/reproductor-web',
           demo: '#'
+        },
+        {
+          title: 'Portafolio',
+          desc: 'Portafolio personal multilenguaje construido con Next.js, diseñado para mostrar perfil profesional, experiencia, habilidades y proyectos.',
+          repo: 'https://github.com/Whatfck/portafolio',
+          demo: '#'
         }
       ],
       repo_label: 'Repo',
@@ -230,6 +236,12 @@ export const dictionaries: Record<string, any> = {
           title: 'Web Player',
           desc: 'Modern audio playback application with an intuitive interface, playlist support, and advanced controls.',
           repo: 'https://github.com/Whatfck/reproductor-web',
+          demo: '#'
+        },
+        {
+          title: 'Portfolio',
+          desc: 'Multilingual personal portfolio built with Next.js to showcase professional profile, experience, skills, and projects.',
+          repo: 'https://github.com/Whatfck/portafolio',
           demo: '#'
         }
       ],
