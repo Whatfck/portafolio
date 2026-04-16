@@ -1,18 +1,12 @@
 import type { Metadata } from 'next'
-import { Plus_Jakarta_Sans, Inter } from 'next/font/google'
+import { Source_Sans_3 } from 'next/font/google'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import '../../styles/globals.css'
 import { getDictionary, Locale } from '@/lib/dictionaries'
 
-const plusJakarta = Plus_Jakarta_Sans({ 
+const sourceSans = Source_Sans_3({ 
   subsets: ['latin'],
-  variable: '--font-plus-jakarta',
-  display: 'swap',
-})
-
-const inter = Inter({ 
-  subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-source-sans',
   display: 'swap',
 })
 
@@ -32,7 +26,7 @@ export default function RootLayout({
   params: { lang: string }
 }) {
   return (
-    <html lang={lang} className={`${plusJakarta.variable} ${inter.variable}`}>
+    <html lang={lang} className={`${sourceSans.variable}`}>
       <body>{children}</body>
     </html>
   )

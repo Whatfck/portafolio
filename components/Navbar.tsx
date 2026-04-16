@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Locale, getDictionary } from '@/lib/dictionaries'
 import { useRouter, usePathname } from 'next/navigation'
 
@@ -30,6 +30,10 @@ export default function Navbar({ lang }: { lang: Locale }) {
     testimonials: dict.testimonials,
     contact: dict.contact,
   }
+
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, top: 0, width: 0, height: 0, opacity: 0 })
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const navRef = useRef<HTMLUListElement>(null)
 
   useEffect(() => {
     let ticking = false
@@ -77,6 +81,32 @@ export default function Navbar({ lang }: { lang: Locale }) {
   }, [])
 
   useEffect(() => {
+    // Update the slider indicator after render
+    const updateIndicator = () => {
+      if (!navRef.current) return
+      const activeLink = navRef.current.querySelector('a.is-active') as HTMLElement
+      if (activeLink) {
+        setIndicatorStyle({
+          left: activeLink.offsetLeft,
+          top: activeLink.offsetTop,
+          width: activeLink.offsetWidth,
+          height: activeLink.offsetHeight,
+          opacity: 1
+        })
+      }
+    }
+    
+    // Add small delay to ensure DOM is fully painted
+    const timer = setTimeout(updateIndicator, 50)
+    window.addEventListener('resize', updateIndicator)
+    
+    return () => {
+      clearTimeout(timer)
+      window.removeEventListener('resize', updateIndicator)
+    }
+  }, [activeSection, lang])
+
+  useEffect(() => {
     const savedTheme = window.localStorage.getItem('theme')
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
@@ -110,37 +140,55 @@ export default function Navbar({ lang }: { lang: Locale }) {
   return (
     <header className={`site-header${isScrolled ? ' is-scrolled' : ''}`}>
       <div className="nav-shell">
-        {isScrolled && <span className="nav-owner">Daniel Perez</span>}
-        {isScrolled && currentMobileSection && <span className="nav-mobile-section">{currentMobileSection}</span>}
-
-        <div className="nav-theme-toggle">
-          <button
-            type="button"
-            className="nav-toggle-btn"
-            onClick={toggleLang}
-            aria-label="Cambiar idioma / Change language"
-            title="Cambiar idioma / Change language"
+        {isScrolled && currentMobileSection && (
+          <button 
+            className="nav-mobile-section"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-expanded={isMobileMenuOpen}
+            aria-label="Toggle mobile menu"
           >
-            {lang === 'en' ? 'EN' : 'ES'}
+            {currentMobileSection}
+            <i className={`fa-solid ${isMobileMenuOpen ? 'fa-xmark' : 'fa-chevron-down'}`} style={{ marginLeft: '0.4rem', fontSize: '0.8em' }}></i>
           </button>
+        )}
 
-          <div className="nav-toggle-divider"></div>
-
-          <button
-            type="button"
-            className="nav-toggle-btn"
-            onClick={toggleTheme}
-            aria-label={theme === 'dark' ? dict.aria_light : dict.aria_dark}
-            title={theme === 'dark' ? dict.aria_light : dict.aria_dark}
-          >
-            <i className={`fa-solid ${theme === 'dark' ? 'fa-sun' : 'fa-moon'}`} aria-hidden="true"></i>
-          </button>
-        </div>
+        {isMobileMenuOpen && (
+          <>
+            <div className="mobile-menu-backdrop" onClick={() => setIsMobileMenuOpen(false)}></div>
+            <nav className="mobile-menu-floating">
+              <ul className="mobile-menu-links">
+                {links.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className={`mobile-link ${activeSection === link.href.slice(1) ? 'is-active' : ''}`}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </>
+        )}
 
         <nav className="navbar" aria-label="Navegacion principal">
-          <ul className="navbar-links">
+          
+          <div className="nav-brand">
+            <strong>DP.</strong>
+          </div>
+
+          <ul className="navbar-links" ref={navRef}>
+            <li className="nav-indicator" style={{
+              left: `${indicatorStyle.left}px`,
+              top: `${indicatorStyle.top}px`,
+              width: `${indicatorStyle.width}px`,
+              height: `${indicatorStyle.height}px`,
+              opacity: indicatorStyle.opacity
+            }}></li>
             {links.map((link) => (
-              <li key={link.href}>
+              <li key={link.href} className="nav-item">
                 <a
                   href={link.href}
                   className={activeSection === link.href.slice(1) ? 'is-active' : ''}
@@ -150,6 +198,30 @@ export default function Navbar({ lang }: { lang: Locale }) {
               </li>
             ))}
           </ul>
+
+          <div className="nav-theme-toggle">
+            <button
+              type="button"
+              className="nav-toggle-btn"
+              onClick={toggleLang}
+              aria-label="Cambiar idioma / Change language"
+              title="Cambiar idioma / Change language"
+            >
+              {lang === 'en' ? 'EN' : 'ES'}
+            </button>
+
+            <div className="nav-toggle-divider"></div>
+
+            <button
+              type="button"
+              className="nav-toggle-btn"
+              onClick={toggleTheme}
+              aria-label={theme === 'dark' ? dict.aria_light : dict.aria_dark}
+              title={theme === 'dark' ? dict.aria_light : dict.aria_dark}
+            >
+              <i className={`fa-solid ${theme === 'dark' ? 'fa-sun' : 'fa-moon'}`} aria-hidden="true"></i>
+            </button>
+          </div>
         </nav>
       </div>
     </header>
