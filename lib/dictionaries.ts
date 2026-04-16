@@ -25,26 +25,26 @@ export const dictionaries: Record<string, any> = {
       kicker: 'Mi perfil',
       lead: 'Soy Daniel Pérez, estudiante de Ingeniería de Software con interés en el desarrollo de sistemas y la infraestructura que los soporta.',
       p1: 'Me enfoco en entender cómo funcionan las aplicaciones de extremo a extremo, desde la lógica hasta su despliegue, incluyendo redes y entornos Linux.',
-      p2: 'Actualmente estoy fortaleciendo mis bases técnicas mediante proyectos prácticos, especialmente en sistemas, contenedores y exposición de servicios, buscando construir soluciones estables y bien estructuradas.',
+      p2: 'Actualmente construyo mis bases técnicas a través de proyectos prácticos orientados a despliegues reales, virtualización y automatización de procesos.',
       languages_title: 'Idiomas',
       languages: [
         { name: 'Español', level: '100%', label: 'Lengua materna' },
         { name: 'Inglés', level: '50%', label: 'Intermedio (~50%)' }
       ],
       highlight_title: 'Enfoque actual',
-      highlight_text: 'Construyendo una base sólida en arquitectura de red y administración de servidores para desplegar servicios de forma profesional.',
-      pill1_title: '🚀 Enfoque',
+      highlight_text: 'Aplicando conocimientos teóricos en laboratorios de redes y servidores para dominar el ciclo de vida del software y la infraestructura subyacente.',
+      pill1_title: 'Enfoque',
       pill1_text: 'Comprender el funcionamiento de los sistemas más allá de su implementación, priorizando decisiones técnicas sostenibles y bien fundamentadas.',
-      pill2_title: '🎯 Objetivo',
+      pill2_title: 'Objetivo',
       pill2_text: 'Desarrollar software confiable y escalable, con una base sólida en sistemas e infraestructura.',
-      pill3_title: '💡 Intereses',
+      pill3_title: 'Intereses',
       pill3_text: 'Redes, Infraestructura, Ciberseguridad y Rendimiento de sistemas.',
     },
     skills: {
       title: 'Habilidades',
       kicker: 'Mi arsenal',
-      focus: 'Enfoque: Interés en sistemas, redes e infraestructura, con experiencia práctica en entornos Linux y despliegue de servicios.',
-      intro: 'Tecnologías y conceptos con los que trabajo habitualmente para construir soluciones robustas y seguras.',
+      focus: 'Perfil: Inclinación técnica hacia el backend y la infraestructura, complementado con bases esenciales de desarrollo frontend.',
+      intro: 'Tecnologías y herramientas que utilizo en mi día a día.',
       categories: [
         {
           title: 'Sistemas e Infraestructura',
@@ -71,20 +71,20 @@ export const dictionaries: Record<string, any> = {
     experience: {
       title: 'Experiencia',
       kicker: 'Trayectoria',
-      intro: 'Mi formación académica enfocada en la ingeniería de software y la especialización técnica.',
+      intro: 'La etapa actual de mi formación académica.',
       items: [
         {
           date: '2024 - 2028',
           role: 'Estudiante de Ingeniería de Software',
           company: 'Universidad',
-          desc: 'Formación integral en desarrollo de software, arquitectura de sistemas y redes de computadoras.'
+          desc: 'Adquiriendo fundamentos en algoritmia, bases de datos y arquitectura, complementando la teoría con interés propio por la infraestructura y redes.'
         }
       ]
     },
     projects: {
       title: 'Proyectos',
       kicker: 'Mi codigo',
-      intro: 'Una seleccion de trabajos en los que he aplicado mis conocimientos.',
+      intro: 'Una selección de trabajos en los que he aplicado mis conocimientos.',
       items: [
         {
           title: 'UniShop',
@@ -159,14 +159,14 @@ export const dictionaries: Record<string, any> = {
       kicker: 'My profile',
       lead: 'I am Daniel Pérez, a Software Engineering student with an interest in system development and the infrastructure that supports them.',
       p1: 'I focus on understanding how applications work end-to-end, from logic to deployment, including networking and Linux environments.',
-      p2: 'Currently, I am strengthening my technical foundations through practical projects, specifically in systems, containers, and service exposure, seeking to build stable and well-structured solutions.',
+      p2: 'Currently, I am building my technical foundations through hands-on projects focused on real-world deployments, virtualization, and process automation.',
       languages_title: 'Languages',
       languages: [
         { name: 'Spanish', level: '100%', label: 'Native language' },
         { name: 'English', level: '50%', label: 'Intermediate (~50%)' }
       ],
       highlight_title: 'Current focus',
-      highlight_text: 'Building a solid foundation in network architecture and server administration to deploy services professionally.',
+      highlight_text: 'Applying theoretical knowledge in networking and server labs to master the software lifecycle and underlying infrastructure.',
       pill1_title: '🚀 Focus',
       pill1_text: 'Understanding the inner workings of systems beyond implementation, prioritizing sustainable and well-founded technical decisions.',
       pill2_title: '🎯 Goal',
@@ -177,8 +177,8 @@ export const dictionaries: Record<string, any> = {
     skills: {
       title: 'Skills',
       kicker: 'Tools',
-      focus: 'Focus: Interest in systems, networks, and infrastructure, with practical experience in Linux environments and service deployment.',
-      intro: 'Technologies and concepts I regularly work with to build robust and secure solutions.',
+      focus: 'Profile: Technical inclination towards backend and infrastructure, complemented by essential frontend development skills.',
+      intro: 'Technologies and tools I use on a daily basis.',
       categories: [
         {
           title: 'Systems & Infrastructure',
@@ -205,20 +205,20 @@ export const dictionaries: Record<string, any> = {
     experience: {
       title: 'Experience',
       kicker: 'Path',
-      intro: 'My academic training focused on software engineering and technical specialization.',
+      intro: 'The current stage of my academic training.',
       items: [
         {
           date: '2024 - 2028 (expected)',
           role: 'Software Engineering Student',
           company: 'University',
-          desc: 'Comprehensive training in software development, systems architecture, and computer networks.'
+          desc: 'Acquiring solid fundamentals in algorithms, databases, and architecture, supplementing theory with a self-driven interest in infrastructure and networks.'
         }
       ]
     },
     projects: {
       title: 'Projects',
       kicker: 'My code',
-      intro: 'A selection of works where I have applied my architectural and development knowledge.',
+      intro: 'A selection of works where I have applied my knowledge.',
       items: [
         {
           title: 'UniShop',
