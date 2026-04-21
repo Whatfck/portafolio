@@ -59,6 +59,9 @@ export default function Contact({ lang }: { lang: Locale }) {
         <p className="section-intro">
           {dict.intro}
         </p>
+        <div className="section-focus-badge">
+          <p>{dict.primary_note}</p>
+        </div>
       </div>
 
       <div className="contact-grid">
@@ -166,6 +169,7 @@ export default function Contact({ lang }: { lang: Locale }) {
           <div className="contact-bar">
             <p className="contact-note">{dict.note1}</p>
             <p className="contact-note">{dict.note2}</p>
+            <p className="contact-note">{dict.primary_note}</p>
           </div>
         </aside>
       </div>

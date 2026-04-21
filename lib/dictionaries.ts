@@ -1,4 +1,149 @@
-export const dictionaries: Record<string, any> = {
+export type Locale = 'en' | 'es'
+
+type LanguageItem = {
+  name: string
+  level: string
+  label: string
+}
+
+type SkillCategory = {
+  title: string
+  items: string[]
+}
+
+type ExperienceItem = {
+  date: string
+  role: string
+  company: string
+  desc: string
+}
+
+type ProjectItem = {
+  title: string
+  desc: string
+  repo: string
+  view?: string
+  image_url: string
+  image_alt: string
+}
+
+type Dictionary = {
+  navbar: {
+    hero: string
+    about: string
+    skills: string
+    experience: string
+    projects: string
+    testimonials: string
+    contact: string
+    theme_light: string
+    theme_dark: string
+    aria_light: string
+    aria_dark: string
+  }
+  hero: {
+    eyebrow: string
+    name: string
+    role: string
+    copy: string
+    btn_cv: string
+    photo_url: string
+    photo_alt: string
+    linkedin_url: string
+    github_url: string
+    cv_url: string
+    linkedin_label: string
+    github_label: string
+  }
+  about: {
+    title: string
+    kicker: string
+    location_title: string
+    location_value: string
+    location_note: string
+    lead: string
+    p1: string
+    p2: string
+    languages_title: string
+    languages: LanguageItem[]
+    highlight_title: string
+    highlight_text: string
+    pill1_title: string
+    pill1_text: string
+    pill2_title: string
+    pill2_text: string
+    pill3_title: string
+    pill3_text: string
+  }
+  skills: {
+    title: string
+    kicker: string
+    focus: string
+    intro: string
+    categories: SkillCategory[]
+  }
+  experience: {
+    title: string
+    kicker: string
+    intro: string
+    items: ExperienceItem[]
+  }
+  projects: {
+    title: string
+    kicker: string
+    intro: string
+    items: ProjectItem[]
+    repo_label: string
+    view_label: string
+  }
+  testimonials: {
+    title: string
+    kicker: string
+    intro: string
+    t1_text: string
+    t1_author: string
+    t1_role: string
+    t2_text: string
+    t2_author: string
+    t2_role: string
+    t3_text: string
+    t3_author: string
+    t3_role: string
+  }
+  contact: {
+    title: string
+    kicker: string
+    intro: string
+    primary_note: string
+    form_title: string
+    form_name_label: string
+    form_email_label: string
+    form_subject_label: string
+    form_message_label: string
+    form_submit_label: string
+    form_sending_label: string
+    form_success: string
+    form_error: string
+    form_error_required: string
+    c2_title: string
+    c2_desc: string
+    c2_href: string
+    c2_text: string
+    c3_title: string
+    c3_desc: string
+    c3_href: string
+    c3_text: string
+    note1: string
+    note2: string
+  }
+  footer: {
+    rights: string
+    more_about_label: string
+    more_about_href: string
+  }
+}
+
+export const dictionaries: Record<Locale, Dictionary> = {
   es: {
     navbar: {
       hero: 'Inicio',
@@ -142,6 +287,7 @@ export const dictionaries: Record<string, any> = {
       title: 'Contacto',
       kicker: 'Hablemos',
       intro: 'Si quieres colaborar, tienes una propuesta o simplemente deseas conversar sobre tecnologia, escribeme.',
+      primary_note: 'El formulario es la forma principal de contacto.',
       form_title: 'Enviar mensaje',
       form_name_label: 'Nombre *',
       form_email_label: 'Correo *',
@@ -152,10 +298,6 @@ export const dictionaries: Record<string, any> = {
       form_success: 'Mensaje enviado. Te respondere pronto.',
       form_error: 'No se pudo enviar el mensaje. Intenta nuevamente en unos minutos.',
       form_error_required: 'Completa nombre, correo y mensaje para continuar.',
-      c1_title: 'Email',
-      c1_desc: 'Canal principal para propuestas y colaboraciones.',
-      c1_href: 'mailto:danieleperez12@gmail.com',
-      c1_text: 'danieleperez12@gmail.com',
       c2_title: 'LinkedIn',
       c2_desc: 'Contacto profesional y networking.',
       c2_href: 'https://www.linkedin.com/in/daniel-perez-blank',
@@ -316,6 +458,7 @@ export const dictionaries: Record<string, any> = {
       title: 'Contact',
       kicker: 'Let\'s talk',
       intro: 'If you want to collaborate, have a proposal, or just want to chat about technology, write to me.',
+      primary_note: 'The form is the primary contact method.',
       form_title: 'Send message',
       form_name_label: 'Name *',
       form_email_label: 'Email *',
@@ -326,10 +469,6 @@ export const dictionaries: Record<string, any> = {
       form_success: 'Message sent. I will reply soon.',
       form_error: 'Message could not be sent. Please try again in a few minutes.',
       form_error_required: 'Please complete name, email, and message.',
-      c1_title: 'Email',
-      c1_desc: 'Main channel for proposals and collaborations.',
-      c1_href: 'mailto:danieleperez12@gmail.com',
-      c1_text: 'danieleperez12@gmail.com',
       c2_title: 'LinkedIn',
       c2_desc: 'Professional contact and networking.',
       c2_href: 'https://www.linkedin.com/in/daniel-perez-blank',
@@ -349,5 +488,4 @@ export const dictionaries: Record<string, any> = {
   }
 };
 
-export type Locale = 'en' | 'es';
-export const getDictionary = (locale: Locale) => dictionaries[locale] || dictionaries['en'];
+export const getDictionary = (locale: Locale): Dictionary => dictionaries[locale] || dictionaries.en;

@@ -33,16 +33,16 @@ export default function AboutMe({ lang }: { lang: Locale }) {
 
           <div className="about-languages">
             <h3>{dict.languages_title}</h3>
-            {dict.languages.map((lang: any, index: number) => (
+            {dict.languages.map((language, index: number) => (
               <div key={index} className="language-item">
                 <div className="language-info">
-                  <span className="language-name">{lang.name}</span>
-                  <span className="language-level">{lang.label}</span>
+                  <span className="language-name">{language.name}</span>
+                  <span className="language-level">{language.label}</span>
                 </div>
                 <div className="language-bar-bg">
                   <div 
                     className="language-bar-fill" 
-                    style={{ '--bar-width': lang.level } as React.CSSProperties}
+                    style={{ '--bar-width': language.level } as React.CSSProperties}
                   ></div>
                 </div>
               </div>
