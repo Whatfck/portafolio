@@ -37,8 +37,8 @@ html {
   --surface-elevated: rgba(255, 255, 255, 0.9);
   --surface-subtle: rgba(17, 24, 39, 0.04);
   --ring: rgba(15, 23, 42, 0.12);
-  --scroll-target-offset-desktop: 5rem;
-  --scroll-target-offset-mobile: 4rem;
+  --scroll-target-offset-desktop: 3rem;
+  --scroll-target-offset-mobile: 3.3rem;
   --scroll-target-offset: var(--scroll-target-offset-desktop);
 
   --font-primary: var(--font-source-sans), 'Source Sans 3', sans-serif;
@@ -1203,7 +1203,15 @@ html[data-theme='dark'] .tech-card::after {
   .scroll-section {
     min-height: auto;
     gap: 0.65rem;
-    padding-top: 0.35rem;
+    padding-top: 0.5rem;
+  }
+
+  .about-section {
+    padding-top: 0.5rem;
+  }
+
+  .contact-section {
+    padding-top: 0.5rem;
   }
 
   .hero-inner {
