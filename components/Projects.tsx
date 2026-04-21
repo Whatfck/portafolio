@@ -16,8 +16,8 @@ export default function Projects({ lang }: { lang: Locale }) {
       <div className="projects-grid">
         {dict.items.map((project: any, index: number) => (
           <article key={index} className="project-card">
-            <div className="project-placeholder" aria-hidden="true">
-              <span>Preview</span>
+            <div className="project-media">
+              <img src={project.image_url} alt={project.image_alt || project.title} loading="lazy" />
             </div>
             <h3>{project.title}</h3>
             <p>

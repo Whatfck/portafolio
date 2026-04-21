@@ -19,6 +19,13 @@ export const dictionaries: Record<string, any> = {
       role: 'Estudiante Ing. Software',
       copy: 'Enfocado en software, redes y arquitectura de servidores para crear soluciones robustas y eficientes.',
       btn_cv: 'Ver CV',
+      photo_url: '/media/hero/daniel-perez.svg',
+      photo_alt: 'Retrato de Daniel Perez',
+      linkedin_url: 'https://www.linkedin.com/in/daniel-perez-blank',
+      github_url: 'https://github.com/Whatfck',
+      cv_url: '#',
+      linkedin_label: 'LinkedIn',
+      github_label: 'GitHub',
     },
     about: {
       title: 'Sobre mí',
@@ -93,19 +100,25 @@ export const dictionaries: Record<string, any> = {
           title: 'UniShop',
           desc: 'Plataforma de comercio electrónico diseñada para la comunidad universitaria, facilitando la compra y venta de productos entre estudiantes.',
           repo: 'https://github.com/Whatfck/UniShop',
-          demo: '#'
+          demo: '#',
+          image_url: '/media/projects/UniShop.png',
+          image_alt: 'Vista previa del proyecto UniShop'
         },
         {
           title: 'Reproductor Web',
           desc: 'Aplicación de reproducción de audio moderna con interfaz intuitiva, soporte para listas de reproducción y controles avanzados.',
           repo: 'https://github.com/Whatfck/reproductor-web',
-          demo: '#'
+          demo: '#',
+          image_url: '/media/projects/reproductor-web.png',
+          image_alt: 'Vista previa del proyecto Reproductor Web'
         },
         {
           title: 'Portafolio',
           desc: 'Portafolio personal multilenguaje construido con Next.js, diseñado para mostrar perfil profesional, experiencia, habilidades y proyectos.',
           repo: 'https://github.com/Whatfck/portafolio',
-          demo: '#'
+          demo: '#',
+          image_url: '/media/projects/portafolio.png',
+          image_alt: 'Vista previa del proyecto Portafolio'
         }
       ],
       repo_label: 'Repo',
@@ -131,10 +144,16 @@ export const dictionaries: Record<string, any> = {
       intro: 'Si quieres colaborar, tienes una propuesta o simplemente deseas conversar sobre tecnologia, escribeme.',
       c1_title: 'Email',
       c1_desc: 'Canal principal para propuestas y colaboraciones.',
+      c1_href: 'mailto:danieleperez12@gmail.com',
+      c1_text: 'danieleperez12@gmail.com',
       c2_title: 'LinkedIn',
       c2_desc: 'Contacto profesional y networking.',
+      c2_href: 'https://www.linkedin.com/in/daniel-perez-blank',
+      c2_text: 'linkedin.com/in/daniel-perez-blank',
       c3_title: 'GitHub',
       c3_desc: 'Repositorio de proyectos y experimentos.',
+      c3_href: 'https://github.com/Whatfck',
+      c3_text: 'github.com/Whatfck',
       note1: 'Disponible para colaboraciones freelance y remotas.',
       note2: 'Tiempo de respuesta estimado: 24 a 48 horas.',
     },
@@ -162,6 +181,13 @@ export const dictionaries: Record<string, any> = {
       role: 'Software Engineering Student',
       copy: 'Focused on software, networks, and server architecture to build robust and efficient solutions.',
       btn_cv: 'View CV',
+      photo_url: '/media/hero/daniel-perez.svg',
+      photo_alt: 'Portrait of Daniel Perez',
+      linkedin_url: 'https://www.linkedin.com/in/daniel-perez-blank',
+      github_url: 'https://github.com/Whatfck',
+      cv_url: '#',
+      linkedin_label: 'LinkedIn',
+      github_label: 'GitHub',
     },
     about: {
       title: 'About me',
@@ -236,19 +262,25 @@ export const dictionaries: Record<string, any> = {
           title: 'UniShop',
           desc: 'E-commerce platform designed for the university community, facilitating the purchase and sale of products among students.',
           repo: 'https://github.com/Whatfck/UniShop',
-          demo: '#'
+          demo: '#',
+          image_url: '/media/projects/unishop.svg',
+          image_alt: 'Project preview for UniShop'
         },
         {
           title: 'Web Player',
           desc: 'Modern audio playback application with an intuitive interface, playlist support, and advanced controls.',
           repo: 'https://github.com/Whatfck/reproductor-web',
-          demo: '#'
+          demo: '#',
+          image_url: '/media/projects/reproductor-web.svg',
+          image_alt: 'Project preview for Web Player'
         },
         {
           title: 'Portfolio',
           desc: 'Multilingual personal portfolio built with Next.js to showcase professional profile, experience, skills, and projects.',
           repo: 'https://github.com/Whatfck/portafolio',
-          demo: '#'
+          demo: '#',
+          image_url: '/media/projects/portafolio.svg',
+          image_alt: 'Project preview for Portfolio'
         }
       ],
       repo_label: 'Repo',
@@ -274,10 +306,16 @@ export const dictionaries: Record<string, any> = {
       intro: 'If you want to collaborate, have a proposal, or just want to chat about technology, write to me.',
       c1_title: 'Email',
       c1_desc: 'Main channel for proposals and collaborations.',
+      c1_href: 'mailto:danieleperez12@gmail.com',
+      c1_text: 'danieleperez12@gmail.com',
       c2_title: 'LinkedIn',
       c2_desc: 'Professional contact and networking.',
+      c2_href: 'https://www.linkedin.com/in/daniel-perez-blank',
+      c2_text: 'linkedin.com/in/daniel-perez-blank',
       c3_title: 'GitHub',
       c3_desc: 'Repository for projects and experiments.',
+      c3_href: 'https://github.com/Whatfck',
+      c3_text: 'github.com/Whatfck',
       note1: 'Available for freelance and remote collaborations.',
       note2: 'Estimated response time: 24 to 48 hours.',
     },

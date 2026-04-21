@@ -19,8 +19,8 @@ export default function Contact({ lang }: { lang: Locale }) {
             <span className="contact-card-badge">01</span>
             <h3>{dict.c1_title}</h3>
             <p className="contact-card-line">{dict.c1_desc}</p>
-            <a className="contact-card-link" href="mailto:danieleperez12@gmail.com">
-              danieleperez12@gmail.com
+            <a className="contact-card-link" href={dict.c1_href}>
+              {dict.c1_text}
             </a>
           </article>
 
@@ -30,11 +30,11 @@ export default function Contact({ lang }: { lang: Locale }) {
             <p className="contact-card-line">{dict.c2_desc}</p>
             <a
               className="contact-card-link"
-              href="https://www.linkedin.com/in/daniel-perez-blank"
+              href={dict.c2_href}
               target="_blank"
               rel="noreferrer"
             >
-              linkedin.com/in/daniel-perez-blank
+              {dict.c2_text}
             </a>
           </article>
 
@@ -42,8 +42,8 @@ export default function Contact({ lang }: { lang: Locale }) {
             <span className="contact-card-badge">03</span>
             <h3>{dict.c3_title}</h3>
             <p className="contact-card-line">{dict.c3_desc}</p>
-            <a className="contact-card-link" href="https://github.com/Whatfck" target="_blank" rel="noreferrer">
-              github.com/Whatfck
+            <a className="contact-card-link" href={dict.c3_href} target="_blank" rel="noreferrer">
+              {dict.c3_text}
             </a>
           </article>
 
