@@ -7,7 +7,12 @@ import { useRouter, usePathname } from 'next/navigation'
 export default function Navbar({ lang }: { lang: Locale }) {
   const [activeSection, setActiveSection] = useState('hero')
   const [themeMode, setThemeMode] = useState<'system' | 'light' | 'dark'>(() => {
-    return 'system'
+    if (typeof window === 'undefined') {
+      return 'system'
+    }
+
+    const storedMode = window.localStorage.getItem('theme-mode')
+    return storedMode === 'light' || storedMode === 'dark' ? storedMode : 'system'
   })
   const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light')
   const router = useRouter()
@@ -111,11 +116,6 @@ export default function Navbar({ lang }: { lang: Locale }) {
   }, [activeSection, lang])
 
   useEffect(() => {
-    setThemeMode('system')
-    window.localStorage.setItem('theme-mode', 'system')
-  }, [])
-
-  useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
     const applyTheme = () => {
@@ -182,7 +182,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
     const nextMode = currentTheme === 'dark' ? 'light' : 'dark'
 
     setThemeMode(nextMode)
-    window.localStorage.setItem('theme-mode', 'system')
+    window.localStorage.setItem('theme-mode', nextMode)
     document.documentElement.setAttribute('data-theme', nextMode)
   }
 
@@ -210,6 +210,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
   const handleSectionClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     event.preventDefault()
     scrollToSection(href)
+    window.history.pushState(null, '', `${window.location.pathname}${href}`)
     setIsMobileMenuOpen(false)
   }
 

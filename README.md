@@ -1,45 +1,37 @@
 # Portafolio - Daniel Perez
 
-Portafolio profesional construido con **Next.js 14** y **CSS Global**.
+Portafolio profesional construido con Next.js 14, TypeScript y CSS global.
 
-## Stack
-
-- **Next.js 14** - React framework con App Router
-- **TypeScript** - Type safety
-- **CSS Global** - Estilos responsivos sin frameworks
-
-## Desarrollo Local
+## Desarrollo local
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+Abrir en http://localhost:3000.
 
-## Deploy en Vercel
+## Scripts
 
-Este proyecto se despliega automáticamente en Vercel cuando haces push a la rama `main`.
+- npm run dev
+- npm run build
+- npm run start
+- npm run lint
 
-[Ir al sitio en línea](https://portafolio-daniel-perez.vercel.app)
+## Estructura actual
 
-## Estructura
-
-```
-├── app/
-│   ├── globals.css      # Estilos globales
-│   ├── layout.tsx       # Layout raíz
-│   └── page.tsx         # Página principal
-├── components/
-│   ├── Hero.tsx         # Sección Hero
-│   ├── Projects.tsx     # Proyectos
-│   ├── Skills.tsx       # Skills
-│   └── Contact.tsx      # Contacto
-└── public/              # Assets estáticos
+```txt
+app/[lang]/layout.tsx
+app/[lang]/page.tsx
+components/
+lib/dictionaries.ts
+styles/globals.css
+middleware.ts
+public/
 ```
 
-## Personalizacion
+## Personalización
 
-- Edita los componentes en `components/`
-- Ajusta estilos en `app/globals.css`
-- Modificá metadata en `app/layout.tsx`
+- Contenido multilenguaje: lib/dictionaries.ts
+- Secciones UI: components/
+- Estilos globales: styles/globals.css

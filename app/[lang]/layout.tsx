@@ -33,10 +33,12 @@ export default function RootLayout({
         <Script id="theme-init" strategy="beforeInteractive">
           {`(() => {
             try {
+              const storedMode = window.localStorage.getItem('theme-mode');
               const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              const theme = systemPrefersDark ? 'dark' : 'light';
+              const theme = storedMode === 'dark' || storedMode === 'light'
+                ? storedMode
+                : (systemPrefersDark ? 'dark' : 'light');
 
-              window.localStorage.setItem('theme-mode', 'system');
               document.documentElement.setAttribute('data-theme', theme);
             } catch (error) {
               document.documentElement.setAttribute('data-theme', 'light');

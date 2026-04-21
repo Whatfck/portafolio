@@ -4,7 +4,7 @@ export default function AboutMe({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang).about
 
   return (
-    <section id="about" className="scroll-section about-section">
+    <section id="about" className="scroll-section">
       <div className="about-header">
         <h2>{dict.title}</h2>
         <p className="about-kicker">{dict.kicker}</p>
