@@ -1,4 +1,23 @@
+"use client"
+
+import { motion } from 'framer-motion'
 import { Locale, getDictionary } from '@/lib/dictionaries'
+
+const gridVariants = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.12 },
+  },
+}
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 32 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.55, ease: 'easeOut' as const },
+  },
+}
 
 export default function Projects({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang).projects
@@ -13,9 +32,21 @@ export default function Projects({ lang }: { lang: Locale }) {
         </p>
       </div>
 
-      <div className="projects-grid">
+      <motion.div
+        className="projects-grid"
+        variants={gridVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: '-80px' }}
+      >
         {dict.items.map((project, index: number) => (
-          <article key={index} className="project-card">
+          <motion.article
+            key={index}
+            className="project-card"
+            variants={cardVariants}
+            whileHover={{ y: -6, scale: 1.01 }}
+            transition={{ type: 'spring', stiffness: 280, damping: 20 }}
+          >
             <div className="project-media">
               <img src={project.image_url} alt={project.image_alt || project.title} loading="lazy" />
             </div>
@@ -33,10 +64,9 @@ export default function Projects({ lang }: { lang: Locale }) {
                 </a>
               )}
             </div>
-          </article>
+          </motion.article>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }
-

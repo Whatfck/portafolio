@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { Locale, getDictionary } from '@/lib/dictionaries'
 
 export default function Contact({ lang }: { lang: Locale }) {
@@ -131,19 +132,36 @@ export default function Contact({ lang }: { lang: Locale }) {
             />
           </label>
 
-          <button className="contact-submit" type="submit" disabled={status === 'sending'}>
+          <motion.button
+            className="contact-submit"
+            type="submit"
+            disabled={status === 'sending'}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+          >
             {status === 'sending' ? dict.form_sending_label : dict.form_submit_label}
-          </button>
+          </motion.button>
 
           {feedback && (
-            <p className={`contact-feedback ${status === 'success' ? 'is-success' : 'is-error'}`} role="status">
+            <motion.p
+              className={`contact-feedback ${status === 'success' ? 'is-success' : 'is-error'}`}
+              role="status"
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
               {feedback}
-            </p>
+            </motion.p>
           )}
         </form>
 
         <aside className="contact-info">
-          <article className="contact-card">
+          <motion.article
+            className="contact-card"
+            whileHover={{ y: -3, scale: 1.01 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+          >
             <span className="contact-card-badge">01</span>
             <h3>{dict.c2_title}</h3>
             <p className="contact-card-line">{dict.c2_desc}</p>
@@ -155,16 +173,20 @@ export default function Contact({ lang }: { lang: Locale }) {
             >
               {dict.c2_text}
             </a>
-          </article>
+          </motion.article>
 
-          <article className="contact-card">
+          <motion.article
+            className="contact-card"
+            whileHover={{ y: -3, scale: 1.01 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+          >
             <span className="contact-card-badge">02</span>
             <h3>{dict.c3_title}</h3>
             <p className="contact-card-line">{dict.c3_desc}</p>
             <a className="contact-card-link" href={dict.c3_href} target="_blank" rel="noreferrer">
               {dict.c3_text}
             </a>
-          </article>
+          </motion.article>
 
           <div className="contact-bar">
             <p className="contact-note">{dict.note1}</p>
@@ -176,4 +198,3 @@ export default function Contact({ lang }: { lang: Locale }) {
     </section>
   )
 }
-

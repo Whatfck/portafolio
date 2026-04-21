@@ -1,7 +1,21 @@
 "use client"
 
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Locale, getDictionary } from '@/lib/dictionaries'
+
+const pillVariants = {
+  hidden: { opacity: 0, scale: 0.88 },
+  show: (i: number) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.35,
+      delay: i * 0.06,
+      ease: 'easeOut' as const,
+    },
+  }),
+}
 
 export default function Skills({ lang }: { lang: Locale }) {
   const dict = getDictionary(lang).skills
@@ -38,18 +52,36 @@ export default function Skills({ lang }: { lang: Locale }) {
         ))}
       </div>
 
-      <article id="skills-mobile-panel" className="skills-mobile-panel tech-card" key={activeCategoryIndex}>
-        <h3>{activeCategory.title}</h3>
-        <div className="skills-list">
-          {activeCategory.items.map((item: string, itemIdx: number) => (
-            <span key={`mobile-item-${itemIdx}`} className="skill-pill">{item}</span>
-          ))}
-        </div>
-      </article>
+      <AnimatePresence mode="wait">
+        <motion.article
+          id="skills-mobile-panel"
+          className="skills-mobile-panel tech-card"
+          key={activeCategoryIndex}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <h3>{activeCategory.title}</h3>
+          <div className="skills-list">
+            {activeCategory.items.map((item: string, itemIdx: number) => (
+              <motion.span
+                key={`mobile-item-${itemIdx}`}
+                className="skill-pill"
+                custom={itemIdx}
+                variants={pillVariants}
+                initial="hidden"
+                animate="show"
+              >
+                {item}
+              </motion.span>
+            ))}
+          </div>
+        </motion.article>
+      </AnimatePresence>
 
       <div className="bento-grid">
         {dict.categories.map((category: any, idx: number) => {
-          // Logic for bento sizing based on category title
           const titleLower = category.title.toLowerCase();
           const isMain = titleLower.includes('sistema') || titleLower.includes('infra');
           const isWide = titleLower.includes('desarrollo') || titleLower.includes('web');
@@ -59,18 +91,32 @@ export default function Skills({ lang }: { lang: Locale }) {
           else if (isWide) bentoClass += ' bento-wide';
 
           return (
-            <article key={idx} className={bentoClass}>
+            <motion.article
+              key={idx}
+              className={bentoClass}
+              whileHover={{ y: -5, scale: 1.01 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+            >
               <h3>{category.title}</h3>
               <div className="skills-list">
                 {category.items.map((item: string, itemIdx: number) => (
-                  <span key={itemIdx} className="skill-pill">{item}</span>
+                  <motion.span
+                    key={itemIdx}
+                    className="skill-pill"
+                    custom={itemIdx}
+                    variants={pillVariants}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                  >
+                    {item}
+                  </motion.span>
                 ))}
               </div>
-            </article>
+            </motion.article>
           );
         })}
       </div>
     </section>
   )
 }
-

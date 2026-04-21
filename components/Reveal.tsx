@@ -1,45 +1,49 @@
 "use client"
-import { useEffect, useRef, useState } from 'react'
+
+import { motion } from 'framer-motion'
 
 interface RevealProps {
   children: React.ReactNode
+  /** Retraso en segundos antes de que empiece la animación */
   delay?: number
+  /** Duración de la animación en segundos */
+  duration?: number
+  /** Dirección desde donde entra el elemento */
+  direction?: 'up' | 'down' | 'left' | 'right' | 'none'
+  /** Clase CSS adicional para el wrapper */
+  className?: string
 }
 
-export default function Reveal({ children, delay = 0 }: RevealProps) {
-  const [isVisible, setIsVisible] = useState(false)
-  const ref = useRef<HTMLDivElement>(null)
+const directionOffset = {
+  up:    { y: 40 },
+  down:  { y: -40 },
+  left:  { x: 40 },
+  right: { x: -40 },
+  none:  {},
+}
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.unobserve(entry.target)
-        }
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px',
-      }
-    )
-
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [])
+export default function Reveal({
+  children,
+  delay = 0,
+  duration = 0.6,
+  direction = 'up',
+  className,
+}: RevealProps) {
+  const offset = directionOffset[direction]
 
   return (
-    <div
-      ref={ref}
-      className={`reveal-element ${isVisible ? 'reveal-active' : ''}`}
-      style={{ transitionDelay: `${delay}ms` }}
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, ...offset }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{
+        duration,
+        delay,
+        ease: [0.22, 1, 0.36, 1],
+      }}
     >
       {children}
-    </div>
+    </motion.div>
   )
 }

@@ -460,17 +460,14 @@ html[data-theme='dark'] .about-location-note {
 
 .language-item:nth-child(1) .language-bar-fill {
   background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
-  animation: fill-bar 1.5s cubic-bezier(0.25, 0.8, 0.25, 1) 0.9s forwards;
 }
 
 .language-item:nth-child(2) .language-bar-fill {
   background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
-  animation: fill-bar 1.6s cubic-bezier(0.25, 0.8, 0.25, 1) 1.05s forwards;
 }
 
 .language-item:nth-child(3) .language-bar-fill {
   background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%);
-  animation: fill-bar 1.7s cubic-bezier(0.25, 0.8, 0.25, 1) 1.2s forwards;
 }
 
 .language-info {
@@ -505,9 +502,9 @@ html[data-theme='dark'] .about-location-note {
 .language-bar-fill {
   height: 100%;
   border-radius: 999px;
-  width: var(--bar-width);
   position: relative;
   box-shadow: 0 0 8px rgba(16, 185, 129, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  /* width is animated by Framer Motion */
 }
 
 html[data-theme='dark'] .language-bar-bg {
@@ -519,31 +516,7 @@ html[data-theme='dark'] .language-level {
   color: #94a3b8;
 }
 
-/* ---- Hero animations ---- */
-@keyframes fill-bar {
-  0% {
-    width: 0;
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 0.9;
-  }
-  100% {
-    width: var(--bar-width);
-    opacity: 1;
-  }
-}
-
-@keyframes hero-gradient {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes hero-fade-up {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+/* ---- Hero animations (managed by Framer Motion) ---- */
 
 @keyframes scroll-cue-bounce {
   0%, 100% { transform: translateX(-50%) translateY(0);   opacity: 0.55; }
@@ -609,7 +582,7 @@ html[data-theme='dark'] .hero::after {
   gap: 2.5rem;
   position: relative;
   z-index: 1;
-  animation: hero-fade-up 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+  /* entrance animated by Framer Motion */
 }
 
 .hero-content {
@@ -1935,16 +1908,7 @@ html[data-theme='dark'] .skill-pill {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-@keyframes skills-mobile-fade {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* skills-mobile-fade replaced by Framer Motion AnimatePresence */
 
 .skills-mobile-switcher,
 .skills-mobile-panel {
@@ -1991,7 +1955,7 @@ html[data-theme='dark'] .skill-pill {
     border-radius: 16px;
     background: var(--card-bg);
     box-shadow: var(--card-shadow);
-    animation: skills-mobile-fade 340ms cubic-bezier(0.2, 0.75, 0.2, 1);
+    /* panel entrance handled by Framer Motion AnimatePresence */
   }
 
   .skills-mobile-panel h3 {
@@ -2040,20 +2004,7 @@ html[data-theme='dark'] .skill-pill {
 }
 
 /* --- ANIMACIONES DYNAMIC DESIGN --- */
-
-/* Scroll Reveal */
-.reveal-element {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 800ms cubic-bezier(0.4, 0, 0.2, 1), 
-              transform 800ms cubic-bezier(0.4, 0, 0.2, 1);
-  will-change: opacity, transform;
-}
-
-.reveal-element.reveal-active {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* Scroll Reveal is now managed by Framer Motion (Reveal.tsx) */
 
 /* Hero Animated Background removed for minimalist B&W aesthetic */
 
