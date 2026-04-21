@@ -192,6 +192,27 @@ export default function Navbar({ lang }: { lang: Locale }) {
     router.push(newPath)
   }
 
+  const scrollToSection = (href: string) => {
+    const targetId = href.replace('#', '')
+    const targetSection = document.getElementById(targetId)
+
+    if (!targetSection) {
+      return
+    }
+
+    const header = document.querySelector('.site-header') as HTMLElement | null
+    const offset = (header?.offsetHeight ?? 0) + 24
+    const targetTop = targetSection.getBoundingClientRect().top + window.scrollY - offset
+
+    window.scrollTo({ top: targetTop, behavior: 'smooth' })
+  }
+
+  const handleSectionClick = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    event.preventDefault()
+    scrollToSection(href)
+    setIsMobileMenuOpen(false)
+  }
+
   return (
     <header className={`site-header${isScrolled ? ' is-scrolled' : ''}`}>
       <div className="nav-shell">
@@ -217,7 +238,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
                     <a
                       href={link.href}
                       className={`mobile-link ${activeSection === link.href.slice(1) ? 'is-active' : ''}`}
-                      onClick={() => setIsMobileMenuOpen(false)}
+                      onClick={(event) => handleSectionClick(event, link.href)}
                     >
                       {link.label}
                     </a>
@@ -247,6 +268,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
                 <a
                   href={link.href}
                   className={activeSection === link.href.slice(1) ? 'is-active' : ''}
+                  onClick={(event) => handleSectionClick(event, link.href)}
                 >
                   {link.label}
                 </a>

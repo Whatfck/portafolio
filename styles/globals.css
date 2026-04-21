@@ -242,6 +242,12 @@ html[data-theme='dark'] {
   transform: translateY(-1px) scale(1.02);
 }
 
+.navbar-links a.is-active:hover {
+  color: inherit;
+  background: transparent;
+  transform: none;
+}
+
 .navbar-links a.is-active {
   color: var(--bg);
   /* background and shadow are now handled by the .nav-indicator */
@@ -281,10 +287,6 @@ section {
   justify-content: flex-start;
   gap: 0.8rem;
   padding-top: 1rem;
-}
-
-.about-section {
-  padding-top: 1.4rem;
 }
 
 .about-header {
@@ -781,7 +783,6 @@ html[data-theme='dark'] .hero-actions .button:hover {
 
 
 .contact-section {
-  padding-top: 2.4rem;
 }
 
 .contact-header {
@@ -1233,14 +1234,6 @@ html[data-theme='dark'] .tech-card::after {
   .scroll-section {
     min-height: auto;
     gap: 0.65rem;
-    padding-top: 0.5rem;
-  }
-
-  .about-section {
-    padding-top: 0.5rem;
-  }
-
-  .contact-section {
     padding-top: 0.5rem;
   }
 
