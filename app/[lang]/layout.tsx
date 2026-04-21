@@ -29,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang={lang} className={`${sourceSans.variable}`} suppressHydrationWarning>
       <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon-white.svg" sizes="any" />
         <Script id="theme-init" strategy="beforeInteractive">
           {`(() => {
             try {

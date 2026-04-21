@@ -100,7 +100,7 @@ export const dictionaries: Record<string, any> = {
           title: 'UniShop',
           desc: 'Plataforma de comercio electrónico diseñada para la comunidad universitaria, facilitando la compra y venta de productos entre estudiantes.',
           repo: 'https://github.com/Whatfck/UniShop',
-          demo: '#',
+          view: 'https://uni-shop-frontend.vercel.app/',
           image_url: '/media/projects/UniShop.png',
           image_alt: 'Vista previa del proyecto UniShop'
         },
@@ -108,7 +108,7 @@ export const dictionaries: Record<string, any> = {
           title: 'Reproductor Web',
           desc: 'Aplicación de reproducción de audio moderna con interfaz intuitiva, soporte para listas de reproducción y controles avanzados.',
           repo: 'https://github.com/Whatfck/reproductor-web',
-          demo: '#',
+          view: 'https://reproductor-web-omega.vercel.app/',
           image_url: '/media/projects/reproductor-web.png',
           image_alt: 'Vista previa del proyecto Reproductor Web'
         },
@@ -116,13 +116,13 @@ export const dictionaries: Record<string, any> = {
           title: 'Portafolio',
           desc: 'Portafolio personal multilenguaje construido con Next.js, diseñado para mostrar perfil profesional, experiencia, habilidades y proyectos.',
           repo: 'https://github.com/Whatfck/portafolio',
-          demo: '#',
+          view: 'https://portafolio-daniel-perez.vercel.app/',
           image_url: '/media/projects/portafolio.png',
           image_alt: 'Vista previa del proyecto Portafolio'
         }
       ],
       repo_label: 'Repo',
-      demo_label: 'Demo',
+      view_label: 'Ver',
     },
     testimonials: {
       title: 'Testimonios',
@@ -158,7 +158,9 @@ export const dictionaries: Record<string, any> = {
       note2: 'Tiempo de respuesta estimado: 24 a 48 horas.',
     },
     footer: {
-      rights: 'Todos los derechos reservados.'
+      rights: 'Todos los derechos reservados.',
+      more_about_label: 'Más sobre mí',
+      more_about_href: 'https://linktr.ee/danielperzz'
     }
   },
   en: {
@@ -262,29 +264,29 @@ export const dictionaries: Record<string, any> = {
           title: 'UniShop',
           desc: 'E-commerce platform designed for the university community, facilitating the purchase and sale of products among students.',
           repo: 'https://github.com/Whatfck/UniShop',
-          demo: '#',
-          image_url: '/media/projects/unishop.svg',
+          view: 'https://uni-shop-frontend.vercel.app/',
+          image_url: '/media/projects/UniShop.png',
           image_alt: 'Project preview for UniShop'
         },
         {
           title: 'Web Player',
           desc: 'Modern audio playback application with an intuitive interface, playlist support, and advanced controls.',
           repo: 'https://github.com/Whatfck/reproductor-web',
-          demo: '#',
-          image_url: '/media/projects/reproductor-web.svg',
+          view: 'https://reproductor-web-omega.vercel.app/',
+          image_url: '/media/projects/reproductor-web.png',
           image_alt: 'Project preview for Web Player'
         },
         {
           title: 'Portfolio',
           desc: 'Multilingual personal portfolio built with Next.js to showcase professional profile, experience, skills, and projects.',
           repo: 'https://github.com/Whatfck/portafolio',
-          demo: '#',
-          image_url: '/media/projects/portafolio.svg',
+          view: 'https://portafolio-daniel-perez.vercel.app/',
+          image_url: '/media/projects/portafolio.png',
           image_alt: 'Project preview for Portfolio'
         }
       ],
       repo_label: 'Repo',
-      demo_label: 'Demo',
+      view_label: 'View',
     },
     testimonials: {
       title: 'Testimonials',
@@ -320,7 +322,9 @@ export const dictionaries: Record<string, any> = {
       note2: 'Estimated response time: 24 to 48 hours.',
     },
     footer: {
-      rights: 'All rights reserved.'
+      rights: 'All rights reserved.',
+      more_about_label: 'More about me',
+      more_about_href: 'https://linktr.ee/danielperzz'
     }
   }
 };

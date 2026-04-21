@@ -42,7 +42,7 @@ export default function AboutMe({ lang }: { lang: Locale }) {
                 <div className="language-bar-bg">
                   <div 
                     className="language-bar-fill" 
-                    style={{ width: lang.level }}
+                    style={{ '--bar-width': lang.level } as React.CSSProperties}
                   ></div>
                 </div>
               </div>

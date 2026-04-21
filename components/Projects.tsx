@@ -27,9 +27,9 @@ export default function Projects({ lang }: { lang: Locale }) {
               <a href={project.repo} className="project-link" target="_blank" rel="noreferrer">
                 <i className="fa-brands fa-github" aria-hidden="true"></i> {dict.repo_label}
               </a>
-              {project.demo !== '#' && (
-                <a href={project.demo} className="project-link" target="_blank" rel="noreferrer">
-                  <i className="fa-solid fa-link" aria-hidden="true"></i> {dict.demo_label}
+              {project.view && (
+                <a href={project.view} className="project-link" target="_blank" rel="noreferrer">
+                  <i className="fa-solid fa-eye" aria-hidden="true"></i> {dict.view_label}
                 </a>
               )}
             </div>
