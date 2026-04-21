@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { use } from 'react'
 import { Source_Sans_3 } from 'next/font/google'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import '../../styles/globals.css'
@@ -11,7 +12,8 @@ const sourceSans = Source_Sans_3({
   display: 'swap',
 })
 
-export async function generateMetadata({ params: { lang } }: { params: { lang: Locale } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ lang: Locale }> }): Promise<Metadata> {
+  const { lang } = await params
   const dict = getDictionary(lang)
   return {
     title: `${dict.hero.name} | Portafolio`,
@@ -21,11 +23,13 @@ export async function generateMetadata({ params: { lang } }: { params: { lang: L
 
 export default function RootLayout({
   children,
-  params: { lang },
+  params,
 }: {
   children: React.ReactNode
-  params: { lang: string }
+  params: Promise<{ lang: string }>
 }) {
+  const { lang } = use(params)
+
   return (
     <html lang={lang} className={`${sourceSans.variable}`} suppressHydrationWarning>
       <head>

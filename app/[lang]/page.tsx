@@ -10,7 +10,9 @@ import Footer from '@/components/Footer'
 import Reveal from '@/components/Reveal'
 import { Locale } from '@/lib/dictionaries'
 
-export default function Home({ params: { lang } }: { params: { lang: Locale } }) {
+export default async function Home({ params }: { params: Promise<{ lang: Locale }> }) {
+  const { lang } = await params
+
   return (
     <>
       <Navbar lang={lang} />
