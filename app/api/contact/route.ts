@@ -73,11 +73,20 @@ export async function POST(request: Request) {
     })
 
     if (!resendResponse.ok) {
-      return NextResponse.json({ error: 'Email delivery failed' }, { status: 502 })
+      const providerError = await resendResponse.text()
+      console.error('Resend delivery failed', {
+        providerStatus: resendResponse.status,
+        providerError,
+      })
+      return NextResponse.json(
+        { error: 'Email delivery failed', providerStatus: resendResponse.status },
+        { status: 502 }
+      )
     }
 
     return NextResponse.json({ ok: true }, { status: 200 })
-  } catch (_error) {
+  } catch (error) {
+    console.error('Contact route unexpected error', error)
     return NextResponse.json({ error: 'Unexpected error' }, { status: 500 })
   }
 }
