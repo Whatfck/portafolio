@@ -2470,7 +2470,30 @@ html[data-theme='dark'] .testimonial-author {
   margin-bottom: 1rem;
 }
 
+.skills-card-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.skills-card-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
 html[data-theme='dark'] .skill-category h3 {
+  color: #e2e8f0;
+}
+
+html[data-theme='dark'] .skills-card-title {
   color: #e2e8f0;
 }
 
@@ -2552,6 +2575,10 @@ html[data-theme='dark'] .skill-pill {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent);
+  }
+
+  .skills-mobile-panel .skills-card-title {
+    margin: 0;
   }
 
   #skills .bento-grid {

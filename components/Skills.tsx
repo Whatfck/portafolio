@@ -2,6 +2,14 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import {
+  CircleStackIcon,
+  CloudIcon,
+  CodeBracketSquareIcon,
+  CommandLineIcon,
+  CpuChipIcon,
+  GlobeAltIcon,
+} from '@heroicons/react/24/outline'
 import { Locale, getDictionary } from '@/lib/dictionaries'
 
 const pillVariants = {
@@ -22,6 +30,30 @@ export default function Skills({ lang }: { lang: Locale }) {
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0)
 
   const activeCategory = dict.categories[activeCategoryIndex] ?? dict.categories[0]
+
+  const getCategoryIcon = (title: string) => {
+    const normalized = title.toLowerCase()
+
+    if (normalized.includes('sistema') || normalized.includes('infrastructure')) return CpuChipIcon
+    if (normalized.includes('red') || normalized.includes('network')) return GlobeAltIcon
+    if (normalized.includes('backend')) return CloudIcon
+    if (normalized.includes('desarrollo') || normalized.includes('web')) return CodeBracketSquareIcon
+    if (normalized.includes('base') || normalized.includes('database')) return CircleStackIcon
+    if (normalized.includes('herramienta') || normalized.includes('scripting') || normalized.includes('tool')) return CommandLineIcon
+
+    return CommandLineIcon
+  }
+
+  const renderCategoryTitle = (title: string) => {
+    const Icon = getCategoryIcon(title)
+
+    return (
+      <h3 className="skills-card-title">
+        <Icon className="skills-card-icon" aria-hidden="true" />
+        <span>{title}</span>
+      </h3>
+    )
+  }
 
   return (
     <section id="skills" className="scroll-section">
@@ -62,7 +94,7 @@ export default function Skills({ lang }: { lang: Locale }) {
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
         >
-          <h3>{activeCategory.title}</h3>
+          {renderCategoryTitle(activeCategory.title)}
           <div className="skills-list">
             {activeCategory.items.map((item: string, itemIdx: number) => (
               <motion.span
@@ -97,7 +129,7 @@ export default function Skills({ lang }: { lang: Locale }) {
               whileHover={{ y: -5, scale: 1.01 }}
               transition={{ type: 'spring', stiffness: 300, damping: 22 }}
             >
-              <h3>{category.title}</h3>
+              {renderCategoryTitle(category.title)}
               <div className="skills-list">
                 {category.items.map((item: string, itemIdx: number) => (
                   <motion.span
