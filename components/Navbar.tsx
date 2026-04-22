@@ -51,7 +51,8 @@ export default function Navbar({ lang }: { lang: Locale }) {
 
     const updateActiveSection = () => {
       const header = document.querySelector('.site-header') as HTMLElement | null
-      const triggerPoint = (header?.offsetHeight ?? 0) + 24
+      // We add a generous buffer (e.g. 70px) so the IntersectionObserver triggers even if it scrolls slightly short
+      const triggerPoint = (header?.offsetHeight ?? 0) + 80
 
       const currentSection = sectionIds.find((sectionId) => {
         const section = document.getElementById(sectionId)
@@ -201,7 +202,8 @@ export default function Navbar({ lang }: { lang: Locale }) {
     }
 
     const header = document.querySelector('.site-header') as HTMLElement | null
-    const offset = (header?.offsetHeight ?? 0) + 24
+    // Offset must match the CSS scroll-padding so the title clears the fixed navbar
+    const offset = (header?.offsetHeight ?? 0) + 40
     const targetTop = targetSection.getBoundingClientRect().top + window.scrollY - offset
 
     window.scrollTo({ top: targetTop, behavior: 'smooth' })

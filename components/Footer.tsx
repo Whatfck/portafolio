@@ -12,6 +12,7 @@ export default function Footer({ lang }: { lang: Locale }) {
         target="_blank"
         rel="noreferrer"
       >
+        <i className="fa-solid fa-fire" aria-hidden="true" style={{ marginRight: '0.4rem', color: '#ffb74d' }}></i>
         {dict.more_about_label}
       </a>
     </footer>
