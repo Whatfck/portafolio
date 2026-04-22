@@ -123,6 +123,7 @@ type Dictionary = {
     form_submit_label: string
     form_sending_label: string
     form_success: string
+    form_reset: string
     form_error: string
     form_error_required: string
     c2_title: string
