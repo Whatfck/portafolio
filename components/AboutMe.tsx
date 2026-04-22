@@ -36,37 +36,18 @@ export default function AboutMe({ lang }: { lang: Locale }) {
 
           <div className="about-languages">
             <h3>{dict.languages_title}</h3>
-            {dict.languages.map((language, index: number) => (
-              <div key={index} className="language-item">
-                <div className="language-info">
-                  <span className="language-name">{language.name}</span>
-                  <span className="language-level">{language.label}</span>
+            <div className="about-languages-list">
+              {dict.languages.map((language, index: number) => (
+                <div key={index} className="language-item">
+                  <span className="language-prompt">$</span>
+                  <p className="language-copy">
+                    <span className="language-name">{language.name}</span>
+                    <span className="language-separator"> - </span>
+                    <span className="language-level">{language.label}</span>
+                  </p>
                 </div>
-                <div className="language-bar-bg">
-                  <motion.div
-                    className="language-bar-fill"
-                    style={
-                      {
-                        '--bar-width': language.level,
-                        // override width since Framer Motion controls it
-                        width: undefined,
-                      } as React.CSSProperties
-                    }
-                    initial={{ width: 0, opacity: 0.5 }}
-                    whileInView={{ width: language.level, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      width: {
-                        duration: 1.4,
-                        delay: 0.2 + index * 0.15,
-                        ease: [0.25, 0.8, 0.25, 1],
-                      },
-                      opacity: { duration: 0.4, delay: 0.2 + index * 0.15 },
-                    }}
-                  />
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </article>
 

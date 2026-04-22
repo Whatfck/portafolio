@@ -177,7 +177,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       title: 'Sobre mí',
       kicker: 'Mi historia',
       location_title: 'Ubicación',
-      location_value: 'Colombia · UTC-5',
+      location_value: 'Pasto · Colombia',
       location_note: 'Hora local de referencia para coordinación y trabajo remoto.',
       lead: '¡HOLA! Soy Daniel Pérez.',
       p1: 'Mi curiosidad desde pequeño por saber cómo funcionan las cosas me llevó al mundo de la computación, pasando de crear servidores por hobby a formalizar mi pasión estudiando Ingeniería de Software.',
@@ -185,7 +185,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       languages_title: 'Idiomas',
       languages: [
         { name: 'Español', level: '100%', label: 'Lengua materna' },
-        { name: 'Inglés', level: '50%', label: 'Intermedio (~50%)' }
+        { name: 'Inglés', level: '50%', label: 'Intermedio' }
       ],
       highlight_title: 'Objetivo actual',
       highlight_text: 'Exploro distintas áreas del desarrollo por mi formación académica, pero mi enfoque natural está en backend, infraestructura y redes. Me interesa construir sistemas eficientes, bien estructurados y confiables por encima de lo visual.',
@@ -224,7 +224,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           title: 'Herramientas y Scripting',
-          items: ['Git / GitHub', 'Bash/Shell', 'Lua (Neovim)', 'Figma', 'Postman']
+          items: ['Git / GitHub', 'Bash/Shell', 'Lua', 'Postman']
         }
       ]
     },
@@ -361,7 +361,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       languages_title: 'Languages',
       languages: [
         { name: 'Spanish', level: '100%', label: 'Native' },
-        { name: 'English', level: '50%', label: 'Intermediate (~50%)' }
+        { name: 'English', level: '50%', label: 'Intermediate' }
       ],
       highlight_title: 'Current Goal',
       highlight_text: 'I explore various areas of development due to my academic background, but my natural focus is on backend, infrastructure, and networks. I am interested in building efficient, well-structured, and reliable systems over visual elements.',
@@ -400,7 +400,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           title: 'Tools & Scripting',
-          items: ['Git / GitHub', 'Bash/Shell', 'Lua (Neovim)', 'Figma', 'Postman']
+          items: ['Git / GitHub', 'Bash/Shell', 'Lua', 'Postman']
         }
       ]
     },

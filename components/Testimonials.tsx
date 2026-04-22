@@ -111,7 +111,7 @@ export default function Testimonials({ lang }: { lang: Locale }) {
         {items.map((item, idx) => (
           <article key={`desktop-${idx}`} className="testimonial-card">
             <span className="testimonial-quote-icon">&quot;</span>
-            <p>{item.text}</p>
+            <p className="testimonial-text">{item.text}</p>
             <p className="testimonial-author">{item.author}</p>
             <p className="testimonial-role">{item.role}</p>
           </article>
@@ -144,7 +144,7 @@ export default function Testimonials({ lang }: { lang: Locale }) {
                   aria-hidden={!isActive}
                 >
                   <span className="testimonial-quote-icon">&quot;</span>
-                  <p>{item.text}</p>
+                  <p className="testimonial-text">{item.text}</p>
                   <p className="testimonial-author">{item.author}</p>
                   <p className="testimonial-role">{item.role}</p>
                 </article>
