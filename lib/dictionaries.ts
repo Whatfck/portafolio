@@ -317,7 +317,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     footer: {
       rights: 'Todos los derechos reservados.',
-      more_about_label: 'Más sobre mí',
+      more_about_label: 'Mas Sobre mi',
       more_about_href: 'https://linktr.ee/danielperzz'
     }
   },

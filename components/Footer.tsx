@@ -5,14 +5,16 @@ export default function Footer({ lang }: { lang: Locale }) {
 
   return (
     <footer className="site-footer">
-      <p>&copy; {new Date().getFullYear()} Daniel Perez. {dict.rights}</p>
+      <div className="site-footer-copy">
+        <p>&copy; 2026 Daniel Perez.</p>
+        <p>{dict.rights}</p>
+      </div>
       <a
         href={dict.more_about_href}
         className="footer-more-link"
         target="_blank"
         rel="noreferrer"
       >
-        <i className="fa-solid fa-fire" aria-hidden="true" style={{ marginRight: '0.4rem', color: '#ffb74d' }}></i>
         {dict.more_about_label}
       </a>
     </footer>
