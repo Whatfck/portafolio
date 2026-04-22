@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 async function generateCV() {
-  console.log('Starting CV generation...');
+  console.log('Starting Spanish CV generation...');
   
   // 1. Read photo and convert to base64
   const photoPath = path.join(__dirname, 'public', 'media', 'hero', 'daniel-perez.jpg');
@@ -16,11 +16,11 @@ async function generateCV() {
   // 2. Define the HTML structure and CSS
   const html = `
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daniel Perez - CV</title>
+  <title>Daniel Pérez - CV</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     
@@ -272,14 +272,14 @@ async function generateCV() {
     <!-- LEFT SIDEBAR -->
     <div class="sidebar">
       <div class="photo-container">
-        <img src="${photoDataUrl}" alt="Daniel Perez">
+        <img src="${photoDataUrl}" alt="Daniel Pérez">
       </div>
       
       <div class="sidebar-section">
-        <h3 class="sidebar-title">Contact</h3>
+        <h3 class="sidebar-title">Contacto</h3>
         
         <div class="contact-item">
-          <span class="contact-label">Location</span>
+          <span class="contact-label">Ubicación</span>
           <span class="contact-val">Colombia · UTC-5</span>
         </div>
         
@@ -294,16 +294,16 @@ async function generateCV() {
         </div>
         
         <div class="contact-item">
-          <span class="contact-label">Portfolio</span>
+          <span class="contact-label">Portafolio</span>
           <span class="contact-val"><a href="https://portafolio-daniel-perez.vercel.app">portafolio-daniel-perez.vercel.app</a></span>
         </div>
       </div>
 
       <div class="sidebar-section">
-        <h3 class="sidebar-title">Tech Arsenal</h3>
+        <h3 class="sidebar-title">Mi Arsenal</h3>
         
         <div class="skill-category">
-          <div class="skill-title">Systems & Infra</div>
+          <div class="skill-title">Sistemas e Infra</div>
           <div class="skill-list">
             <span class="skill-tag">Linux</span>
             <span class="skill-tag">Docker</span>
@@ -316,7 +316,7 @@ async function generateCV() {
         </div>
         
         <div class="skill-category">
-          <div class="skill-title">Networking</div>
+          <div class="skill-title">Redes</div>
           <div class="skill-list">
             <span class="skill-tag">OpenWrt</span>
             <span class="skill-tag">Nginx</span>
@@ -328,7 +328,7 @@ async function generateCV() {
         </div>
 
         <div class="skill-category">
-          <div class="skill-title">Backend & Web</div>
+          <div class="skill-title">Backend y Web</div>
           <div class="skill-list">
             <span class="skill-tag">Java</span>
             <span class="skill-tag">Python (FastAPI)</span>
@@ -339,7 +339,7 @@ async function generateCV() {
         </div>
         
         <div class="skill-category">
-          <div class="skill-title">Databases & Tools</div>
+          <div class="skill-title">Bases de Datos y Herramientas</div>
           <div class="skill-list">
             <span class="skill-tag">PostgreSQL</span>
             <span class="skill-tag">SQLite</span>
@@ -350,14 +350,14 @@ async function generateCV() {
       </div>
 
       <div class="sidebar-section">
-        <h3 class="sidebar-title">Languages</h3>
+        <h3 class="sidebar-title">Idiomas</h3>
         <div class="contact-item">
-          <span class="contact-label">Spanish</span>
-          <span class="contact-val">Native</span>
+          <span class="contact-label">Español</span>
+          <span class="contact-val">Nativo</span>
         </div>
         <div class="contact-item">
-          <span class="contact-label">English</span>
-          <span class="contact-val">Intermediate (~50%)</span>
+          <span class="contact-label">Inglés</span>
+          <span class="contact-val">Intermedio (~50%)</span>
         </div>
       </div>
     </div>
@@ -365,62 +365,62 @@ async function generateCV() {
     <!-- RIGHT MAIN CONTENT -->
     <div class="main">
       <div class="header">
-        <h1 class="name">Daniel<br>Perez</h1>
-        <h2 class="role">Software Engineering Student</h2>
+        <h1 class="name">Daniel<br>Pérez</h1>
+        <h2 class="role">Estudiante de Ingeniería de Software</h2>
       </div>
 
       <div class="section">
-        <h3 class="section-title">Profile</h3>
+        <h3 class="section-title">Perfil</h3>
         <p class="profile-text">
-          I work with software, networking, and servers, driven by a desire to understand how things work and to push systems to the point where they truly make sense. Pragmatic and results-oriented, with a focus on optimization. I seek maximum performance with the least amount of resources, constantly refining until real quality is achieved. My natural focus is on backend, infrastructure, and networks.
+          Trabajo con software, redes y arquitectura de servidores; busco que todo funcione bien, sea eficiente y tenga sentido. Pragmático y orientado a resultados, con foco en la optimización. Busco el máximo rendimiento con el menor uso de recursos, refinando constantemente hasta alcanzar calidad real. Mi enfoque natural está en backend, infraestructura y redes.
         </p>
       </div>
 
       <div class="section">
-        <h3 class="section-title">Experience & Education</h3>
+        <h3 class="section-title">Trayectoria y Educación</h3>
         <div class="item">
           <div class="item-header">
-            <div class="item-title">Software Engineering Student</div>
+            <div class="item-title">Estudiante de Ingeniería de Software</div>
             <div class="item-date">2024 - 2028</div>
           </div>
           <div class="item-subtitle">Universidad Cooperativa De Colombia</div>
-          <p class="item-desc">Acquiring solid fundamentals in algorithms, databases, and architecture, supplementing theory with a self-driven interest in infrastructure and networks.</p>
+          <p class="item-desc">Adquiriendo fundamentos en algoritmia, bases de datos y arquitectura, complementando la teoría con interés propio por la infraestructura y redes.</p>
         </div>
       </div>
 
       <div class="section">
-        <h3 class="section-title">Key Projects</h3>
+        <h3 class="section-title">Proyectos Destacados</h3>
         
         <div class="item">
           <div class="item-title">UniShop</div>
           <a href="https://github.com/Whatfck/UniShop" class="item-link">github.com/Whatfck/UniShop</a>
-          <p class="item-desc">E-commerce platform designed for the university community, facilitating the purchase and sale of products among students.</p>
+          <p class="item-desc">Plataforma de comercio electrónico diseñada para la comunidad universitaria, facilitando la compra y venta de productos entre estudiantes.</p>
         </div>
         
         <div class="item">
-          <div class="item-title">Web Player</div>
+          <div class="item-title">Reproductor Web</div>
           <a href="https://github.com/Whatfck/reproductor-web" class="item-link">github.com/Whatfck/reproductor-web</a>
-          <p class="item-desc">Modern audio playback application with an intuitive interface, playlist support, and advanced controls.</p>
+          <p class="item-desc">Aplicación de reproducción de audio moderna con interfaz intuitiva, soporte para listas de reproducción y controles avanzados.</p>
         </div>
         
         <div class="item">
-          <div class="item-title">Multilingual Portfolio</div>
+          <div class="item-title">Portafolio Multilenguaje</div>
           <a href="https://github.com/Whatfck/portafolio" class="item-link">github.com/Whatfck/portafolio</a>
-          <p class="item-desc">Personal portfolio built with Next.js to showcase professional profile, experience, skills, and projects with dynamic localization and brutalist design.</p>
+          <p class="item-desc">Portafolio personal construido con Next.js para mostrar perfil profesional, experiencia, habilidades y proyectos con diseño brutalista y animaciones fluidas.</p>
         </div>
       </div>
 
       <div class="section" style="margin-top: auto;">
-        <h3 class="section-title">References</h3>
+        <h3 class="section-title">Referencias</h3>
         
         <div class="testimonial">
-          <p class="testimonial-text">"Daniel proved to be a serious, responsible professional committed to his work. He stood out for his analytical skills, his clarity in communicating information, and his focus on providing useful solutions."</p>
-          <div class="testimonial-author">— Sandra Muncayo (Doctor / Head of Health Services, Red Medicron)</div>
+          <p class="testimonial-text">"Daniel demostró ser un profesional serio, responsable y comprometido con su trabajo. Se destacó por su capacidad de análisis, su claridad al comunicar la información y su enfoque en aportar soluciones útiles."</p>
+          <div class="testimonial-author">— Sandra Muncayo (Médico / Jefatura Servicios de Salud Red Medicron)</div>
         </div>
         
         <div class="testimonial">
-          <p class="testimonial-text">"Daniel is an intelligent, dedicated, and proactive person, with a natural ability to learn and face challenges. He stands out for his discipline, commitment, and ability to apply his knowledge in practice."</p>
-          <div class="testimonial-author">— Julian Cañar (Systems Engineer / Freelance)</div>
+          <p class="testimonial-text">"Daniel es una persona inteligente, dedicada y proactiva, con facilidad para aprender y afrontar retos. Destaca por su disciplina, compromiso y capacidad de aplicar sus conocimientos en la práctica."</p>
+          <div class="testimonial-author">— Julian Cañar (Ingeniero de Sistemas / Independiente)</div>
         </div>
 
       </div>
@@ -438,7 +438,7 @@ async function generateCV() {
   
   await page.setContent(html, { waitUntil: 'networkidle0' });
   
-  const outputPath = path.join(__dirname, 'public', 'media', 'cv', 'Daniel_Perez_CV_EN.pdf');
+  const outputPath = path.join(__dirname, 'public', 'media', 'cv', 'Daniel_Perez_CV_ES.pdf');
   
   console.log('Generating PDF...');
   await page.pdf({

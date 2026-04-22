@@ -204,23 +204,27 @@ export const dictionaries: Record<Locale, Dictionary> = {
       categories: [
         {
           title: 'Sistemas e Infraestructura',
-          items: ['Linux (Fedora/Ubuntu Server)', 'Docker', 'Entornos de desarrollo', 'Despliegue de servicios']
+          items: ['Linux (Fedora/Ubuntu Server)', 'Docker', 'Kubernetes', 'AWS', 'Terraform', 'CI/CD (GitHub Actions)', 'Prometheus']
         },
         {
           title: 'Redes',
-          items: ['OpenWrt', 'Reverse Proxy', 'DNS (Pi-hole/AdGuard)', 'VPN', 'Nmap']
+          items: ['OpenWrt', 'Reverse Proxy (Nginx)', 'Cloudflare', 'DNS (Pi-hole)', 'VPN', 'Nmap']
+        },
+        {
+          title: 'Lenguajes Backend',
+          items: ['Java', 'Python (FastAPI)', 'PHP', 'Node.js / Express']
         },
         {
           title: 'Desarrollo Web',
-          items: ['React / Next.js', 'Tailwind CSS', 'JavaScript / TypeScript', 'Node.js / Express', 'Django', 'APIs REST']
+          items: ['React / Next.js', 'Tailwind CSS', 'JavaScript / TypeScript', 'Django', 'APIs REST']
         },
         {
           title: 'Bases de Datos',
           items: ['PostgreSQL', 'SQLite']
         },
         {
-          title: 'Herramientas',
-          items: ['Git / GitHub', 'Figma', 'Postman']
+          title: 'Herramientas y Scripting',
+          items: ['Git / GitHub', 'Bash/Shell', 'Lua (Neovim)', 'Figma', 'Postman']
         }
       ]
     },
@@ -376,23 +380,27 @@ export const dictionaries: Record<Locale, Dictionary> = {
       categories: [
         {
           title: 'Systems & Infrastructure',
-          items: ['Linux (Fedora/Ubuntu Server)', 'Docker', 'Development Environments', 'Service Deployment']
+          items: ['Linux (Fedora/Ubuntu Server)', 'Docker', 'Kubernetes', 'AWS', 'Terraform', 'CI/CD (GitHub Actions)', 'Prometheus']
         },
         {
           title: 'Networking',
-          items: ['OpenWrt', 'Reverse Proxy', 'DNS (Pi-hole/AdGuard)', 'VPN', 'Nmap']
+          items: ['OpenWrt', 'Reverse Proxy (Nginx)', 'Cloudflare', 'DNS (Pi-hole)', 'VPN', 'Nmap']
+        },
+        {
+          title: 'Backend Languages',
+          items: ['Java', 'Python (FastAPI)', 'PHP', 'Node.js / Express']
         },
         {
           title: 'Web Development',
-          items: ['React / Next.js', 'Tailwind CSS', 'JavaScript / TypeScript', 'Node.js / Express', 'Django', 'REST APIs']
+          items: ['React / Next.js', 'Tailwind CSS', 'JavaScript / TypeScript', 'Django', 'REST APIs']
         },
         {
           title: 'Databases',
           items: ['PostgreSQL', 'SQLite']
         },
         {
-          title: 'Tools',
-          items: ['Git / GitHub', 'Figma', 'Postman']
+          title: 'Tools & Scripting',
+          items: ['Git / GitHub', 'Bash/Shell', 'Lua (Neovim)', 'Figma', 'Postman']
         }
       ]
     },
