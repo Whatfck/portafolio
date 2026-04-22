@@ -1553,32 +1553,62 @@ html[data-theme='dark'] .tech-card::after {
     margin-top: 0.3rem;
   }
 
-  /* On mobile: show labels but smaller buttons */
+  /* Buttons: show label if space allows, icon always visible */
   .hero-actions .button {
-    padding: 0.6rem 1rem;
+    padding: 0.62rem 1.1rem;
     border-radius: 10px;
-    font-size: 0.82rem;
+    font-size: 0.84rem;
+    /* Don't grow beyond content */
+    flex: 0 0 auto;
   }
 
   .hero-actions .button-label {
     display: inline;
+    /* Shrink text gracefully on tiny screens */
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 7rem;
+    transition: max-width 200ms ease, opacity 200ms ease;
   }
 
   .hero-actions .button-icon {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+    flex-shrink: 0;
   }
 
-  /* Photo on mobile — smaller circle so content is visible */
+  /* Photo on mobile — centered circle */
   .hero-photo-wrapper {
     order: 1;
-    padding: 1.5rem 1rem 0.5rem;
+    /* Full width so the circle centers properly */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    /* Clip overflow so ring pulse doesn't create horizontal scroll */
-    overflow: visible;
+    padding: 1rem 0 0.25rem;
+  }
+
+  /* Block display + auto margin = true center in grid cell */
+  .hero-photo-card {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* The glow behind must not expand the wrapper */
+  .hero-photo-glow {
+    position: absolute;
+    inset: -16px;
+    z-index: 0;
   }
 
   .hero-photo {
     width: min(100%, 170px);
+    position: relative;
+    z-index: 1;
+    /* Ensure the circle itself is also centered */
+    display: block;
+    margin: 0 auto;
   }
 
   /* Hide floating chips on mobile — too cramped */
@@ -1708,13 +1738,21 @@ html[data-theme='dark'] .tech-card::after {
     font-size: 0.93rem;
   }
 
+  /* Very small phones: icon-only buttons to prevent wrap */
   .hero-actions .button {
     width: 2.8rem;
     height: 2.8rem;
+    padding: 0;
+    justify-content: center;
+    flex: 0 0 2.8rem;
+  }
+
+  .hero-actions .button-label {
+    display: none;
   }
 
   .hero-actions .button-icon {
-    font-size: 1.18rem;
+    font-size: 1.2rem;
   }
 }
 
