@@ -31,7 +31,7 @@ html {
   
   /* Card Logic */
   --card-bg: #ffffff;
-  --card-border: rgba(0, 0, 0, 0.15);
+  --card-border: rgba(16, 185, 129, 0.35);
   --card-shadow: 4px 4px 0px rgba(0, 0, 0, 0.08);
 
   --surface-elevated: rgba(255, 255, 255, 0.9);
@@ -72,7 +72,7 @@ html[data-theme='dark'] {
   --glass-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
   
   --card-bg: #0f1522;
-  --card-border: rgba(148, 163, 184, 0.32);
+  --card-border: rgba(52, 211, 153, 0.3);
   --card-shadow: 8px 8px 0px rgba(2, 6, 23, 0.55);
 
   --surface-elevated: rgba(15, 21, 34, 0.85);
@@ -2432,8 +2432,8 @@ html[data-theme='dark'] .hero {
 @media (hover: hover) {
   .project-card:hover, .experience-item:hover, .testimonial-card:hover, .skill-category:hover, .bento-item:hover {
     transform: translateY(-8px) scale(1.01);
-    border-color: var(--text);
-    box-shadow: 12px 12px 0px rgba(0, 0, 0, 1);
+    border-color: var(--primary);
+    box-shadow: 12px 12px 0px var(--primary);
     z-index: 10;
   }
 
@@ -2443,9 +2443,9 @@ html[data-theme='dark'] .hero {
   html[data-theme='dark'] .skill-category:hover,
   html[data-theme='dark'] .bento-item:hover {
     transform: translateY(-8px) scale(1.01);
-    border-color: rgba(255, 255, 255, 1);
-    box-shadow: 12px 12px 0px rgba(255, 255, 255, 1),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    border-color: var(--primary);
+    box-shadow: 12px 12px 0px var(--primary),
+                inset 0 0 0 1px rgba(52, 211, 153, 0.1);
   }
 }
 
