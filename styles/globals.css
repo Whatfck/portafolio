@@ -1611,15 +1611,43 @@ html[data-theme='dark'] .tech-card::after {
     margin: 0 auto;
   }
 
-  /* Hide floating chips on mobile — too cramped */
+  /* Adjust floating chips for mobile instead of hiding */
   .hero-chip {
-    display: none;
+    display: inline-flex;
+    transform: scale(0.8);
+    z-index: 10;
   }
 
-  /* Hide float badge on mobile — clips outside viewport */
-  .hero-float-badge,
+  .hero-chip-linux {
+    top: 15%;
+    left: 4%;
+  }
+
+  .hero-chip-docker {
+    bottom: 12%;
+    left: 8%;
+  }
+
+  .hero-chip-react {
+    top: 60%;
+    right: 2%;
+  }
+
+  /* Adjust float badge and label for mobile */
+  .hero-float-badge {
+    display: inline-flex;
+    top: 2%;
+    right: 4%;
+    transform: scale(0.8);
+    transform-origin: top right;
+    z-index: 10;
+  }
+
   .hero-photo-label {
-    display: none;
+    display: inline-flex;
+    bottom: -15px;
+    transform: translateX(-50%) scale(0.85);
+    z-index: 10;
   }
 
   .about-header {
