@@ -162,7 +162,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       eyebrow: '',
       name: 'Daniel Perez',
       role: 'Estudiante Ing. Software',
-      copy: 'Enfocado en software, redes y arquitectura de servidores para crear soluciones robustas y eficientes.',
+      copy: 'Trabajo con software, redes y servidores, motivado por entender cómo funcionan las cosas y llevar los sistemas al punto en el que realmente tienen sentido.',
       btn_cv: 'Ver CV',
       photo_url: '/media/hero/daniel-perez.jpg',
       photo_alt: 'Retrato de Daniel Perez',
@@ -333,7 +333,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       eyebrow: '',
       name: 'Daniel Perez',
       role: 'Software Engineering Student',
-      copy: 'Focused on software, networks, and server architecture to build robust and efficient solutions.',
+      copy: 'I work with software, networking, and servers, driven by a desire to understand how things work and to push systems to the point where they truly make sense.',
       btn_cv: 'View CV',
       photo_url: '/media/hero/daniel-perez.jpg',
       photo_alt: 'Portrait of Daniel Perez',
@@ -357,14 +357,14 @@ export const dictionaries: Record<Locale, Dictionary> = {
         { name: 'Spanish', level: '100%', label: 'Native' },
         { name: 'English', level: '50%', label: 'Intermediate (~50%)' }
       ],
-      highlight_title: 'The Goal',
-      highlight_text: 'To build a fulfilling lifestyle through my technical capabilities, aspiring to engineer robust systems and eventually create something massive that leaves a real mark on the world.',
+      highlight_title: 'Current Goal',
+      highlight_text: 'I explore various areas of development due to my academic background, but my natural focus is on backend, infrastructure, and networks. I am interested in building efficient, well-structured, and reliable systems over visual elements.',
       pill1_title: 'Style',
-      pill1_text: 'Pragmatic, optimizer, and perfectionist. I don\'t stop until I am completely satisfied with the solution.',
-      pill2_title: 'Passion',
-      pill2_text: 'Backend, Networking, and Infrastructure. I prefer making sure everything runs flawlessly behind the scenes.',
+      pill1_text: 'Pragmatic and results-oriented, with a focus on optimization. I seek maximum performance with the least amount of resources, constantly refining until real quality is achieved.',
+      pill2_title: 'Direction',
+      pill2_text: 'My focus is on continuing to develop solid and efficient systems, diving deeper into logic, infrastructure, and optimization, while growing as an engineer by solving real-world problems.',
       pill3_title: 'Off-screen',
-      pill3_text: 'Video games, cooking, tools, cars, motorcycles, and solving any physical or digital puzzle.',
+      pill3_text: 'I enjoy video games, music (guitar), cooking, and hanging out with friends. I also like disassembling, repairing, and optimizing objects as part of my learning process.',
     },
     skills: {
       title: 'Skills',
@@ -400,9 +400,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       intro: 'The current stage of my academic training.',
       items: [
         {
-          date: '2024 - 2028 (expected)',
+          date: '2024 - 2028',
           role: 'Software Engineering Student',
-          company: 'University',
+          company: 'Universidad Cooperativa De Colombia',
           desc: 'Acquiring solid fundamentals in algorithms, databases, and architecture, supplementing theory with a self-driven interest in infrastructure and networks.'
         }
       ]
