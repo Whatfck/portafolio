@@ -73,7 +73,6 @@ export default function AboutMe({ lang }: { lang: Locale }) {
         <aside className="about-side">
           {[
             { title: dict.pill1_title, text: dict.pill1_text },
-            { title: dict.pill2_title, text: dict.pill2_text },
             { title: dict.pill3_title, text: dict.pill3_text },
           ].map((pill, i) => (
             <motion.article
