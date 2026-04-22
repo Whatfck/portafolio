@@ -18,10 +18,10 @@ html {
   --bg-soft: #f4f4f5;
   --text: #09090b;
   --text-muted: #52525b;
-  --primary: #000000;
-  --secondary: #000000;
-  --accent: #27272a;
-  --accent-soft: rgba(0, 0, 0, 0.05);
+  --primary: #10b981;
+  --secondary: #059669;
+  --accent: #059669;
+  --accent-soft: rgba(16, 185, 129, 0.08);
   --border: #e4e4e7;
   
   /* Shared Glass Variables */
@@ -61,10 +61,10 @@ html[data-theme='dark'] {
   --bg-soft: #121722;
   --text: #f5f7ff;
   --text-muted: #b1bdd3;
-  --primary: #ffffff;
-  --secondary: #ffffff;
-  --accent: #d7deef;
-  --accent-soft: rgba(148, 163, 184, 0.16);
+  --primary: #34d399;
+  --secondary: #10b981;
+  --accent: #34d399;
+  --accent-soft: rgba(52, 211, 153, 0.12);
   --border: rgba(148, 163, 184, 0.26);
   
   --glass-bg: rgba(10, 14, 22, 0.84);
@@ -339,7 +339,7 @@ section {
 .about-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.28fr) minmax(280px, 0.72fr);
-  gap: 1rem;
+  gap: 2.5rem;
   align-items: start;
 }
 
@@ -585,7 +585,7 @@ html[data-theme='dark'] .hero-bg-grid {
   right: -8%;
   width: 700px;
   height: 600px;
-  background: radial-gradient(circle, rgba(99,102,241,0.16) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(16,185,129,0.16) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
 }
@@ -595,7 +595,7 @@ html[data-theme='dark'] .hero-glow-tl {
 }
 
 html[data-theme='dark'] .hero-glow-br {
-  background: radial-gradient(circle, rgba(129,140,248,0.18) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(52,211,153,0.18) 0%, transparent 65%);
 }
 
 /* ---- Inner layout ---- */
@@ -750,8 +750,8 @@ html[data-theme='dark'] .hero-status {
 }
 .hero-actions .button-cv:hover {
   background: var(--accent-soft);
-  border-color: var(--text);
-  color: var(--text);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 /* Dark mode overrides */
@@ -768,9 +768,9 @@ html[data-theme='dark'] .hero-actions .button-cv {
   border-color: rgba(148,163,184,0.35);
 }
 html[data-theme='dark'] .hero-actions .button-cv:hover {
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(148,163,184,0.6);
-  color: #f8fafc;
+  background: var(--accent-soft);
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .button-icon {
@@ -882,7 +882,7 @@ html[data-theme='dark'] .hero-photo {
 }
 
 .hero-float-badge i {
-  color: #6366f1;
+  color: var(--primary);
   font-size: 0.82rem;
 }
 
@@ -1010,7 +1010,7 @@ html[data-theme='dark'] .hero-chip {
 .contact-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
-  gap: 1.4rem;
+  gap: 2.5rem;
   max-width: 1000px;
 }
 
@@ -1070,8 +1070,8 @@ html[data-theme='dark'] .hero-chip {
 
 .contact-submit {
   margin-top: 0.2rem;
-  border: 1px solid var(--text);
-  background: var(--text);
+  border: 1px solid var(--primary);
+  background: var(--primary);
   color: var(--bg);
   border-radius: 10px;
   padding: 0.62rem 0.9rem;
@@ -1820,7 +1820,7 @@ html[data-theme='dark'] .tech-card::after {
 .section-focus-badge {
   margin-top: 0.5rem;
   padding: 0.8rem 1.2rem;
-  background: rgba(15, 118, 110, 0.05);
+  background: var(--accent-soft);
   border: 1px dashed var(--primary);
   border-radius: 12px;
   max-width: fit-content;
@@ -1834,12 +1834,12 @@ html[data-theme='dark'] .tech-card::after {
 }
 
 html[data-theme='dark'] .section-focus-badge {
-  background: rgba(56, 189, 248, 0.08);
-  border-color: rgba(56, 189, 248, 0.4);
+  background: var(--accent-soft);
+  border-color: var(--primary);
 }
 
 html[data-theme='dark'] .section-focus-badge p {
-  color: #38bdf8;
+  color: var(--primary);
 }
 
 html[data-theme='dark'] .section-intro {
@@ -1920,10 +1920,10 @@ html[data-theme='dark'] .project-card h3 {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-muted);
-  padding: 0.45rem 0.85rem;
+  padding: 0.6rem 1rem;
   border-radius: 8px;
   background: var(--surface-subtle);
   transition: background 150ms ease, color 150ms ease;
@@ -1931,8 +1931,8 @@ html[data-theme='dark'] .project-card h3 {
 
 .project-link:hover,
 .footer-more-link:hover {
-  background: rgba(17, 24, 39, 0.12);
-  color: var(--text);
+  background: var(--accent-soft);
+  color: var(--primary);
 }
 
 html[data-theme='dark'] .project-link,
@@ -1943,8 +1943,8 @@ html[data-theme='dark'] .footer-more-link {
 
 html[data-theme='dark'] .project-link:hover,
 html[data-theme='dark'] .footer-more-link:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #f8fafc;
+  background: var(--accent-soft);
+  color: var(--primary);
 }
 
 /* Experience */
@@ -2018,6 +2018,9 @@ html[data-theme='dark'] .experience-company {
 
 .testimonial-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border: 1px solid var(--card-border);
   border-radius: 18px;
   background: var(--card-bg);
@@ -2050,6 +2053,7 @@ html[data-theme='dark'] .experience-company {
   font-style: italic;
   font-size: 0.95rem;
   margin-bottom: 1.2rem;
+  flex-grow: 1;
 }
 
 .testimonial-author {
