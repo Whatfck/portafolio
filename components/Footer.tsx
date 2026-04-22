@@ -5,10 +5,7 @@ export default function Footer({ lang }: { lang: Locale }) {
 
   return (
     <footer className="site-footer">
-      <div className="site-footer-copy">
-        <p>&copy; 2026 Daniel Perez.</p>
-        <p>{dict.rights}</p>
-      </div>
+      <p>&copy; 2026 Daniel Perez. {dict.rights}</p>
       <a
         href={dict.more_about_href}
         className="footer-more-link"
