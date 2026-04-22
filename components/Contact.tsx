@@ -143,16 +143,48 @@ export default function Contact({ lang }: { lang: Locale }) {
             {status === 'sending' ? dict.form_sending_label : dict.form_submit_label}
           </motion.button>
 
-          {feedback && (
-            <motion.p
-              className={`contact-feedback ${status === 'success' ? 'is-success' : 'is-error'}`}
+          {status === 'error' && feedback && (
+            <motion.div
+              className="contact-feedback is-error"
               role="status"
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 6, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 25 }}
             >
-              {feedback}
-            </motion.p>
+              <i className="fa-solid fa-circle-exclamation"></i>
+              <span>{feedback}</span>
+            </motion.div>
+          )}
+
+          {status === 'success' && (
+            <motion.div
+              className="contact-success-overlay"
+              initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+              animate={{ opacity: 1, backdropFilter: 'blur(8px)' }}
+              transition={{ duration: 0.4 }}
+            >
+              <motion.div 
+                className="contact-success-card"
+                initial={{ scale: 0.9, y: 20 }}
+                animate={{ scale: 1, y: 0 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 25, delay: 0.1 }}
+              >
+                <div className="contact-success-icon-wrap">
+                  <i className="fa-solid fa-check"></i>
+                </div>
+                <h3>{dict.form_success}</h3>
+                <button
+                  type="button"
+                  className="contact-success-btn"
+                  onClick={() => {
+                    setStatus('idle')
+                    setFeedback('')
+                  }}
+                >
+                  {dict.form_reset}
+                </button>
+              </motion.div>
+            </motion.div>
           )}
         </form>
 
