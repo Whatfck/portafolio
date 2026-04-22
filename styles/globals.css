@@ -460,15 +460,15 @@ html[data-theme='dark'] .about-location-note {
 }
 
 .language-item:nth-child(1) .language-bar-fill {
-  background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+  background: linear-gradient(90deg, #22c55e 0%, #34d399 100%);
 }
 
 .language-item:nth-child(2) .language-bar-fill {
-  background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
+  background: linear-gradient(90deg, #2dd4bf 0%, #34d399 100%);
 }
 
 .language-item:nth-child(3) .language-bar-fill {
-  background: linear-gradient(90deg, #6366f1 0%, #818cf8 100%);
+  background: linear-gradient(90deg, #16a34a 0%, #34d399 100%);
 }
 
 .language-info {
