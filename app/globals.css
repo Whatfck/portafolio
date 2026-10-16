@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #F2EFE8;
+  --ink: #171717;
+  --muted: #77766F;
+  --accent: #D9FF3F;
+  --accent-ink: #171717;
+  --surface: #E8E4DA;
+  --border: #D1CBC0;
+}
+
+[data-theme="dark"] {
+  --bg: #121210;
+  --ink: #F2EFE8;
+  --muted: #8C8A82;
+  --accent: #D9FF3F;
+  --accent-ink: #121210;
+  --surface: #1A1A17;
+  --border: #2E2E2A;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-source-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.font-display {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono), monospace;
+}
+

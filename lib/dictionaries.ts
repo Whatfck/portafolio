@@ -11,20 +11,14 @@ type SkillCategory = {
   items: string[]
 }
 
-type ExperienceItem = {
-  date: string
-  role: string
-  company: string
-  desc: string
-}
-
 type ProjectItem = {
   title: string
   desc: string
   repo: string
-  view?: string
   image_url: string
   image_alt: string
+  stack: string[]
+  architecture: string
 }
 
 type Dictionary = {
@@ -32,35 +26,22 @@ type Dictionary = {
     hero: string
     about: string
     skills: string
-    experience: string
     projects: string
-    testimonials: string
     contact: string
     theme_light: string
     theme_dark: string
-    aria_light: string
-    aria_dark: string
   }
   hero: {
     eyebrow: string
     name: string
     role: string
     copy: string
-    btn_cv: string
-    photo_url: string
-    photo_alt: string
-    linkedin_url: string
+    btn_work: string
     github_url: string
-    cv_url: string
-    linkedin_label: string
-    github_label: string
   }
   about: {
     title: string
     kicker: string
-    location_title: string
-    location_value: string
-    location_note: string
     lead: string
     p1: string
     p2: string
@@ -68,25 +49,12 @@ type Dictionary = {
     languages: LanguageItem[]
     highlight_title: string
     highlight_text: string
-    pill1_title: string
-    pill1_text: string
-    pill2_title: string
-    pill2_text: string
-    pill3_title: string
-    pill3_text: string
   }
   skills: {
     title: string
     kicker: string
-    focus: string
     intro: string
     categories: SkillCategory[]
-  }
-  experience: {
-    title: string
-    kicker: string
-    intro: string
-    items: ExperienceItem[]
   }
   projects: {
     title: string
@@ -94,409 +62,217 @@ type Dictionary = {
     intro: string
     items: ProjectItem[]
     repo_label: string
-    view_label: string
-  }
-  testimonials: {
-    title: string
-    kicker: string
-    intro: string
-    t1_text: string
-    t1_author: string
-    t1_role: string
-    t2_text: string
-    t2_author: string
-    t2_role: string
-    t3_text: string
-    t3_author: string
-    t3_role: string
   }
   contact: {
     title: string
     kicker: string
     intro: string
-    primary_note: string
-    form_title: string
-    form_name_label: string
-    form_email_label: string
-    form_subject_label: string
-    form_message_label: string
-    form_submit_label: string
-    form_sending_label: string
-    form_success: string
-    form_reset: string
-    form_error: string
-    form_error_required: string
-    c2_title: string
-    c2_desc: string
-    c2_href: string
-    c2_text: string
-    c3_title: string
-    c3_desc: string
-    c3_href: string
-    c3_text: string
-    note1: string
-    note2: string
+    email: string
+    location: string
+    github: string
   }
   footer: {
     rights: string
-    more_about_label: string
-    more_about_href: string
   }
 }
 
 export const dictionaries: Record<Locale, Dictionary> = {
   es: {
     navbar: {
-      hero: 'Inicio',
-      about: 'Sobre mi',
-      skills: 'Habilidades',
-      experience: 'Experiencia',
-      projects: 'Proyectos',
-      testimonials: 'Testimonios',
-      contact: 'Contacto',
+      hero: 'INICIO',
+      about: 'SOBRE MÍ',
+      skills: 'SISTEMAS',
+      projects: 'PROYECTOS',
+      contact: 'CONTACTO',
       theme_light: 'Claro',
       theme_dark: 'Oscuro',
-      aria_light: 'Cambiar a modo claro',
-      aria_dark: 'Cambiar a modo oscuro',
     },
     hero: {
-      eyebrow: '',
-      name: 'Daniel Perez',
-      role: 'Estudiante Ing. Software',
-      copy: 'Trabajo con software, redes y servidores, motivado por entender cómo funcionan las cosas y llevar los sistemas al punto en el que realmente tienen sentido.',
-      btn_cv: 'Ver CV',
-      photo_url: '/media/hero/daniel-perez.jpg',
-      photo_alt: 'Retrato de Daniel Perez',
-      linkedin_url: 'https://www.linkedin.com/in/daniel-perez-blank',
+      eyebrow: 'UNIVERSIDAD COOPERATIVA DE COLOMBIA · 2024–2027',
+      name: 'Daniel Pérez',
+      role: 'Ingeniería de Software & Infraestructura Cloud',
+      copy: 'Construyo sistemas rigurosos en backend, infraestructura cloud y programación de sistemas. Sin adornos innecesarios; arquitectura basada en evidencia.',
+      btn_work: 'VER PROYECTOS',
       github_url: 'https://github.com/Whatfck',
-      cv_url: '/media/cv/Daniel_Perez_CV_EN.pdf',
-      linkedin_label: 'LinkedIn',
-      github_label: 'GitHub',
     },
     about: {
-      title: 'Sobre mí',
-      kicker: 'Mi historia',
-      location_title: 'Ubicación',
-      location_value: 'Pasto · Colombia',
-      location_note: 'Hora local de referencia para coordinación y trabajo remoto.',
-      lead: '¡HOLA! Soy Daniel Pérez.',
-      p1: 'Mi curiosidad desde pequeño por saber cómo funcionan las cosas me llevó al mundo de la computación, pasando de crear servidores por hobby a formalizar mi pasión estudiando Ingeniería de Software.',
-      p2: 'Me apasiona el "detrás de escena" de la tecnología: la infraestructura, la lógica y la arquitectura. Disfruto desarmar problemas complejos para construir soluciones eficientes, escalables y estables, asegurándome de que todo, desde la base, simplemente funcione.',
-      languages_title: 'Idiomas',
+      title: 'FORMACIÓN & FILOSOFÍA',
+      kicker: '01 / IDENTIDAD',
+      lead: 'Estudiante de Ingeniería de Software enfocado en entender y operar la infraestructura que sostiene el software moderno.',
+      p1: 'Cursando el sexto semestre en la Universidad Cooperativa de Colombia (UCC). Mi trabajo diario combina el modelado riguroso en backend (Java Spring Boot, Python), la programación de sistemas en Rust y la operación de entornos Linux y Docker.',
+      p2: 'Creo firmemente que un buen ingeniero no solo escribe código que compila, sino que comprende redes, gestión de memoria, observabilidad y despliegue automatizado.',
+      languages_title: 'IDIOMAS',
       languages: [
-        { name: 'Español', level: '100%', label: 'Lengua materna' },
-        { name: 'Inglés', level: '50%', label: 'Intermedio' }
+        { name: 'Español', level: 'Nativo', label: 'C2' },
+        { name: 'Inglés', level: 'Técnico / Lectura fluida', label: 'B2' },
       ],
-      highlight_title: 'Objetivo actual',
-      highlight_text: 'Exploro distintas áreas del desarrollo por mi formación académica, pero mi enfoque natural está en backend, infraestructura y redes. Me interesa construir sistemas eficientes, bien estructurados y confiables por encima de lo visual.',
-      pill1_title: 'Estilo',
-      pill1_text: 'Pragmático y orientado a resultados, con foco en la optimización. Busco el máximo rendimiento con el menor uso de recursos, refinando constantemente hasta alcanzar calidad real.',
-      pill2_title: '',
-      pill2_text: '',
-      pill3_title: 'Fuera del código',
-      pill3_text: 'Disfruto los videojuegos, la música (guitarra), la cocina y compartir con amigos. También me gusta desarmar, reparar y optimizar objetos como parte de mi forma de aprender.',
+      highlight_title: 'PRINCIPIO TÉCNICO',
+      highlight_text: 'La complejidad innecesaria es deuda técnica acumulada. Priorizo código tipado, contenedores limpios y observabilidad nativa.',
     },
     skills: {
-      title: 'Habilidades',
-      kicker: 'Mi arsenal',
-      focus: 'Perfil: Inclinación técnica hacia el backend y la infraestructura, complementado con bases esenciales de desarrollo frontend.',
-      intro: 'Tecnologías y herramientas que utilizo en mi día a día.',
+      title: 'CAPACIDADES TÉCNICAS',
+      kicker: '02 / STACK VERIFICADO',
+      intro: 'Tecnologías probadas en proyectos reales, homelab y arquitectura cloud.',
       categories: [
         {
-          title: 'Sistemas e Infraestructura',
-          items: ['Linux (Fedora/Ubuntu Server)', 'Docker', 'Kubernetes', 'AWS', 'Terraform', 'CI/CD (GitHub Actions)', 'Prometheus']
+          title: 'Backend & Sistemas',
+          items: ['Python (Django, REST)', 'Java (Spring Boot, OOP)', 'Rust (NSPasteboard, CLIs)', 'SQL / PostgreSQL'],
         },
         {
-          title: 'Redes',
-          items: ['OpenWrt', 'Reverse Proxy (Nginx)', 'Cloudflare', 'DNS (Pi-hole)', 'VPN', 'Nmap']
+          title: 'Cloud & Infraestructura',
+          items: ['AWS (Lambda, SQS/SNS, RDS)', 'Terraform (IaC)', 'Docker & Docker Compose', 'Linux (Administración avanzada)'],
         },
         {
-          title: 'Lenguajes Backend',
-          items: ['Java', 'Python (FastAPI)', 'PHP', 'Node.js / Express']
+          title: 'Redes, Seguridad & SRE',
+          items: ['Tailscale (VPN mesh)', 'Prometheus & Grafana (Métricas)', 'Vaultwarden (Gestión de secretos)', 'AdGuard (DNS filtering)'],
         },
-        {
-          title: 'Desarrollo Web',
-          items: ['React / Next.js', 'Tailwind CSS', 'JavaScript / TypeScript', 'Django', 'APIs REST']
-        },
-        {
-          title: 'Bases de Datos',
-          items: ['PostgreSQL', 'SQLite']
-        },
-        {
-          title: 'Herramientas y Scripting',
-          items: ['Git / GitHub', 'Bash/Shell', 'Lua', 'Postman']
-        }
-      ]
-    },
-    experience: {
-      title: 'Experiencia',
-      kicker: 'Trayectoria',
-      intro: 'La etapa actual de mi formación académica.',
-      items: [
-        {
-          date: '2024 - 2028',
-          role: 'Estudiante de Ingeniería de Software',
-          company: 'Universidad Cooperativa De Colombia',
-          desc: 'Adquiriendo fundamentos en algoritmia, bases de datos y arquitectura, complementando la teoría con interés propio por la infraestructura y redes.'
-        }
-      ]
+      ],
     },
     projects: {
-      title: 'Proyectos',
-      kicker: 'Mi codigo',
-      intro: 'Una selección de trabajos en los que he aplicado mis conocimientos.',
+      title: 'PROYECTOS DESTACADOS',
+      kicker: '03 / EVIDENCIA',
+      intro: 'Sistemas reales desarrollados con código abierto y despliegue documentado.',
+      repo_label: 'VER REPOSITORIO',
       items: [
         {
-          title: 'UniShop',
-          desc: 'Plataforma de comercio electrónico diseñada para la comunidad universitaria, facilitando la compra y venta de productos entre estudiantes.',
-          repo: 'https://github.com/Whatfck/UniShop',
-          view: 'https://uni-shop-frontend.vercel.app/',
-          image_url: '/media/projects/UniShop.png',
-          image_alt: 'Vista previa del proyecto UniShop'
+          title: 'hot-clipboard',
+          desc: 'CLI moderno para macOS escrito en Rust que reimagina pbcopy/pbpaste usando NSPasteboard. Permite copiar/pegar archivos, texto e imágenes con conversión automática.',
+          repo: 'https://github.com/Whatfck/hot-clipboard',
+          image_url: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=1200&q=80',
+          image_alt: 'Terminal Rust CLI interface',
+          stack: ['Rust', 'macOS Cocoa APIs', 'NSPasteboard', 'Homebrew'],
+          architecture: 'CLI binario compilado de alto rendimiento con gestión segura de memoria en Rust y enlace nativo a las APIs del portapapeles de macOS.',
         },
         {
-          title: 'Reproductor Web',
-          desc: 'Aplicación de reproducción de audio moderna con interfaz intuitiva, soporte para listas de reproducción y controles avanzados.',
-          repo: 'https://github.com/Whatfck/reproductor-web',
-          view: 'https://reproductor-web-omega.vercel.app/',
-          image_url: '/media/projects/reproductor-web.png',
-          image_alt: 'Vista previa del proyecto Reproductor Web'
+          title: 'daniel-homelab',
+          desc: 'Infraestructura doméstica auto-gestionada para experimentación en redes y seguridad. Incluye VPN mesh, observabilidad y gestión de secretos.',
+          repo: 'https://github.com/Whatfck/daniel-homelab',
+          image_url: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
+          image_alt: 'Server rack network infrastructure',
+          stack: ['Docker', 'Tailscale', 'Prometheus', 'Grafana', 'Vaultwarden'],
+          architecture: 'Arquitectura de servicios containerizados interconectados mediante red virtual segura Tailscale con recolección continua de métricas en Prometheus/Grafana.',
         },
         {
-          title: 'Portafolio',
-          desc: 'Portafolio personal multilenguaje construido con Next.js, diseñado para mostrar perfil profesional, experiencia, habilidades y proyectos.',
-          repo: 'https://github.com/Whatfck/portafolio',
-          view: 'https://portafolio-daniel-perez.vercel.app/',
-          image_url: '/media/projects/portafolio.png',
-          image_alt: 'Vista previa del proyecto Portafolio'
-        }
+          title: 'Proyecto-Final-Cloud-Computing',
+          desc: 'Arquitectura serverless en AWS desplegada con Infrastructure as Code (Terraform), integrando procesamiento asíncrono con SQS/SNS y bases de datos relacionales.',
+          repo: 'https://github.com/Whatfck/Proyecto-Final-Cloud-Computing',
+          image_url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
+          image_alt: 'Cloud infrastructure globe network',
+          stack: ['Terraform', 'AWS Lambda', 'SQS / SNS', 'Amazon RDS', 'Python'],
+          architecture: 'Infraestructura como Código modular en Terraform aprovisionando funciones serverless orientadas a eventos con colas de mensajes y bases de datos gestionadas.',
+        },
       ],
-      repo_label: 'Repo',
-      view_label: 'Ver',
-    },
-    testimonials: {
-      title: 'Testimonios',
-      kicker: 'Referencias',
-      intro: 'Lo que dicen las personas con las que he trabajado o estudiado a lo largo de mis proyectos.',
-      t1_text: '"Es una persona muy dedicada y comprometida con su trabajo. Siempre está dispuesto a ayudar, propone buenas ideas y se enfoca en hacer las cosas bien. Sin duda, alguien con quien es fácil y agradable trabajar.”',
-      t1_author: 'Lorena Paz',
-      t1_role: 'Arquitecta/ Independiente',
-      t2_text: '"Daniel es una persona inteligente, dedicada y proactiva, con facilidad para aprender y afrontar retos. Destaca por su disciplina, compromiso y capacidad de aplicar sus conocimientos en la práctica.',
-      t2_author: 'Julian Cañar',
-      t2_role: 'Ingeniero de Sistemas / Independiente',
-      t3_text: '"Daniel demostró ser un profesional serio, responsable y comprometido con su trabajo. Se destacó por su capacidad de análisis, su claridad al comunicar la información y su enfoque en aportar soluciones útiles. Es una persona confiable y organizada, con quien es fácil trabajar."',
-      t3_author: 'Sandra Muncayo',
-      t3_role: 'Médico / Jefatura Servicios de Salud Red Medicron',
     },
     contact: {
-      title: 'Contacto',
-      kicker: 'Hablemos',
-      intro: 'Si tienes una idea, propuesta o proyecto en mente, puedes escribirme.',
-      primary_note: 'El formulario es el canal principal de contacto.',
-      form_title: 'Enviar mensaje',
-      form_name_label: 'Nombre *',
-      form_email_label: 'Correo *',
-      form_subject_label: 'Asunto',
-      form_message_label: 'Mensaje *',
-      form_submit_label: 'Enviar mensaje',
-      form_sending_label: 'Enviando...',
-      form_success: 'Mensaje enviado. Te respondere pronto.',
-      form_reset: 'Volver',
-      form_error: 'No se pudo enviar el mensaje. Intenta nuevamente en unos minutos.',
-      form_error_required: 'Completa nombre, correo y mensaje para continuar.',
-      c2_title: 'LinkedIn',
-      c2_desc: 'Contacto profesional y networking.',
-      c2_href: 'https://www.linkedin.com/in/daniel-perez-blank',
-      c2_text: 'linkedin.com/in/daniel-perez-blank',
-      c3_title: 'GitHub',
-      c3_desc: 'Repositorio de proyectos y experimentos.',
-      c3_href: 'https://github.com/Whatfck',
-      c3_text: 'github.com/Whatfck',
-      note1: 'Disponible para colaboraciones freelance y remotas.',
-      note2: 'Tiempo de respuesta estimado: 24 a 48 horas.',
+      title: 'CONTACTO DIRECTO',
+      kicker: '04 / COMUNICACIÓN',
+      intro: 'Abierto a oportunidades en Cloud Engineering, Backend y DevOps.',
+      email: 'contacto@danielperez.dev',
+      location: 'Pasto, Nariño, Colombia · Remoto global',
+      github: 'https://github.com/Whatfck',
     },
     footer: {
-      rights: 'Todos los derechos reservados.',
-      more_about_label: 'Mas Sobre mi',
-      more_about_href: 'https://linktr.ee/danielperzz'
-    }
+      rights: '© 2026 Daniel Pérez. Construido con rigor y sistemas limpios.',
+    },
   },
   en: {
     navbar: {
-      hero: 'Home',
-      about: 'About',
-      skills: 'Skills',
-      experience: 'Experience',
-      projects: 'Projects',
-      testimonials: 'Testimonials',
-      contact: 'Contact',
+      hero: 'HOME',
+      about: 'ABOUT',
+      skills: 'SYSTEMS',
+      projects: 'PROJECTS',
+      contact: 'CONTACT',
       theme_light: 'Light',
       theme_dark: 'Dark',
-      aria_light: 'Switch to light mode',
-      aria_dark: 'Switch to dark mode',
     },
     hero: {
-      eyebrow: '',
-      name: 'Daniel Perez',
-      role: 'Software Engineering Student',
-      copy: 'I work with software, networking, and servers, driven by a desire to understand how things work and to push systems to the point where they truly make sense.',
-      btn_cv: 'View CV',
-      photo_url: '/media/hero/daniel-perez.jpg',
-      photo_alt: 'Portrait of Daniel Perez',
-      linkedin_url: 'https://www.linkedin.com/in/daniel-perez-blank',
+      eyebrow: 'UNIVERSIDAD COOPERATIVA DE COLOMBIA · 2024–2027',
+      name: 'Daniel Pérez',
+      role: 'Software Engineering & Cloud Infrastructure',
+      copy: 'Building rigorous systems in backend engineering, cloud infrastructure, and systems programming. No unnecessary decoration; evidence-driven architecture.',
+      btn_work: 'VIEW PROJECTS',
       github_url: 'https://github.com/Whatfck',
-      cv_url: '/media/cv/Daniel_Perez_CV_EN.pdf',
-      linkedin_label: 'LinkedIn',
-      github_label: 'GitHub',
     },
     about: {
-      title: 'About Me',
-      kicker: 'My Story',
-      location_title: 'Location',
-      location_value: 'Colombia · UTC-5',
-      location_note: 'Local reference time for coordination and remote work.',
-      lead: 'HELLO!!! I\'m Daniel Pérez.',
-      p1: 'My childhood curiosity about how things work led me into the world of computing, going from building servers as a hobby to formalizing my passion by studying Software Engineering.',
-      p2: 'I\'m passionate about the "behind the scenes" of technology: the infrastructure, the logic, and the architecture. I enjoy breaking down complex problems to build efficient, scalable, and stable solutions, making sure that everything, from the ground up, simply works.',
-      languages_title: 'Languages',
+      title: 'BACKGROUND & PHILOSOPHY',
+      kicker: '01 / IDENTITY',
+      lead: 'Software engineering student focused on understanding and operating the infrastructure powering modern software.',
+      p1: 'Currently in my 6th semester at Universidad Cooperativa de Colombia (UCC). My work combines rigorous backend domain modeling (Java Spring Boot, Python), systems programming in Rust, and Linux/Docker operations.',
+      p2: 'I believe a strong engineer does more than write code that compiles—they understand networking, memory management, observability, and automated deployment.',
+      languages_title: 'LANGUAGES',
       languages: [
-        { name: 'Spanish', level: '100%', label: 'Native' },
-        { name: 'English', level: '50%', label: 'Intermediate' }
+        { name: 'Spanish', level: 'Native', label: 'C2' },
+        { name: 'English', level: 'Technical / Fluent reading', label: 'B2' },
       ],
-      highlight_title: 'Current Goal',
-      highlight_text: 'I explore various areas of development due to my academic background, but my natural focus is on backend, infrastructure, and networks. I am interested in building efficient, well-structured, and reliable systems over visual elements.',
-      pill1_title: 'Style',
-      pill1_text: 'Pragmatic and results-oriented, with a focus on optimization. I seek maximum performance with the least amount of resources, constantly refining until real quality is achieved.',
-      pill2_title: '',
-      pill2_text: '',
-      pill3_title: 'Off-screen',
-      pill3_text: 'I enjoy video games, music (guitar), cooking, and hanging out with friends. I also like disassembling, repairing, and optimizing objects as part of my learning process.',
+      highlight_title: 'TECHNICAL PRINCIPLE',
+      highlight_text: 'Unnecessary complexity is accumulated technical debt. I prioritize typed code, clean containers, and native observability.',
     },
     skills: {
-      title: 'Skills',
-      kicker: 'Tools',
-      focus: 'Profile: Technical inclination towards backend and infrastructure, complemented by essential frontend development skills.',
-      intro: 'Technologies and tools I use on a daily basis.',
+      title: 'TECHNICAL CAPABILITIES',
+      kicker: '02 / VERIFIED STACK',
+      intro: 'Technologies proven in real projects, homelabs, and cloud deployments.',
       categories: [
         {
-          title: 'Systems & Infrastructure',
-          items: ['Linux (Fedora/Ubuntu Server)', 'Docker', 'Kubernetes', 'AWS', 'Terraform', 'CI/CD (GitHub Actions)', 'Prometheus']
+          title: 'Backend & Systems',
+          items: ['Python (Django, REST)', 'Java (Spring Boot, OOP)', 'Rust (NSPasteboard, CLIs)', 'SQL / PostgreSQL'],
         },
         {
-          title: 'Networking',
-          items: ['OpenWrt', 'Reverse Proxy (Nginx)', 'Cloudflare', 'DNS (Pi-hole)', 'VPN', 'Nmap']
+          title: 'Cloud & Infrastructure',
+          items: ['AWS (Lambda, SQS/SNS, RDS)', 'Terraform (IaC)', 'Docker & Docker Compose', 'Linux (Advanced administration)'],
         },
         {
-          title: 'Backend Languages',
-          items: ['Java', 'Python (FastAPI)', 'PHP', 'Node.js / Express']
+          title: 'Networking, Security & SRE',
+          items: ['Tailscale (VPN mesh)', 'Prometheus & Grafana (Metrics)', 'Vaultwarden (Secrets management)', 'AdGuard (DNS filtering)'],
         },
-        {
-          title: 'Web Development',
-          items: ['React / Next.js', 'Tailwind CSS', 'JavaScript / TypeScript', 'Django', 'REST APIs']
-        },
-        {
-          title: 'Databases',
-          items: ['PostgreSQL', 'SQLite']
-        },
-        {
-          title: 'Tools & Scripting',
-          items: ['Git / GitHub', 'Bash/Shell', 'Lua', 'Postman']
-        }
-      ]
-    },
-    experience: {
-      title: 'Experience',
-      kicker: 'Path',
-      intro: 'The current stage of my academic training.',
-      items: [
-        {
-          date: '2024 - 2028',
-          role: 'Software Engineering Student',
-          company: 'Universidad Cooperativa De Colombia',
-          desc: 'Acquiring solid fundamentals in algorithms, databases, and architecture, supplementing theory with a self-driven interest in infrastructure and networks.'
-        }
-      ]
+      ],
     },
     projects: {
-      title: 'Projects',
-      kicker: 'My code',
-      intro: 'A selection of works where I have applied my knowledge.',
+      title: 'SELECTED WORK',
+      kicker: '03 / EVIDENCE',
+      intro: 'Real systems built with open-source code and documented deployments.',
+      repo_label: 'VIEW REPOSITORY',
       items: [
         {
-          title: 'UniShop',
-          desc: 'E-commerce platform designed for the university community, facilitating the purchase and sale of products among students.',
-          repo: 'https://github.com/Whatfck/UniShop',
-          view: 'https://uni-shop-frontend.vercel.app/',
-          image_url: '/media/projects/UniShop.png',
-          image_alt: 'Project preview for UniShop'
+          title: 'hot-clipboard',
+          desc: 'A modern Rust CLI for macOS that reimagines pbcopy/pbpaste using NSPasteboard. Handles copying/pasting files, text, and images with automatic conversion.',
+          repo: 'https://github.com/Whatfck/hot-clipboard',
+          image_url: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=1200&q=80',
+          image_alt: 'Terminal Rust CLI interface',
+          stack: ['Rust', 'macOS Cocoa APIs', 'NSPasteboard', 'Homebrew'],
+          architecture: 'High-performance compiled binary CLI with safe memory management in Rust and native binding to macOS pasteboard APIs.',
         },
         {
-          title: 'Web Player',
-          desc: 'Modern audio playback application with an intuitive interface, playlist support, and advanced controls.',
-          repo: 'https://github.com/Whatfck/reproductor-web',
-          view: 'https://reproductor-web-omega.vercel.app/',
-          image_url: '/media/projects/reproductor-web.png',
-          image_alt: 'Project preview for Web Player'
+          title: 'daniel-homelab',
+          desc: 'Self-hosted home infrastructure for experimentation in networking and security. Features mesh VPN, observability, and secrets management.',
+          repo: 'https://github.com/Whatfck/daniel-homelab',
+          image_url: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
+          image_alt: 'Server rack network infrastructure',
+          stack: ['Docker', 'Tailscale', 'Prometheus', 'Grafana', 'Vaultwarden'],
+          architecture: 'Containerized service architecture interconnected via secure Tailscale virtual network with continuous metric scraping in Prometheus/Grafana.',
         },
         {
-          title: 'Portfolio',
-          desc: 'Multilingual personal portfolio built with Next.js to showcase professional profile, experience, skills, and projects.',
-          repo: 'https://github.com/Whatfck/portafolio',
-          view: 'https://portafolio-daniel-perez.vercel.app/',
-          image_url: '/media/projects/portafolio.png',
-          image_alt: 'Project preview for Portfolio'
-        }
+          title: 'Proyecto-Final-Cloud-Computing',
+          desc: 'Serverless AWS architecture deployed with Infrastructure as Code (Terraform), integrating asynchronous processing via SQS/SNS and managed relational databases.',
+          repo: 'https://github.com/Whatfck/Proyecto-Final-Cloud-Computing',
+          image_url: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
+          image_alt: 'Cloud infrastructure globe network',
+          stack: ['Terraform', 'AWS Lambda', 'SQS / SNS', 'Amazon RDS', 'Python'],
+          architecture: 'Modular Terraform IaC provisioning event-driven serverless functions with message queues and managed databases.',
+        },
       ],
-      repo_label: 'Repo',
-      view_label: 'View',
-    },
-    testimonials: {
-      title: 'Testimonials',
-      kicker: 'References',
-      intro: 'What people I have worked or studied with say throughout my projects.',
-      t1_text: '"He is a very dedicated person and committed to his work. He is always willing to help, proposes good ideas, and focuses on doing things right. Undoubtedly, someone who is easy and pleasant to work with."',
-      t1_author: 'Lorena Paz',
-      t1_role: 'Architect / Freelance',
-      t2_text: '"Daniel is an intelligent, dedicated, and proactive person, with a natural ability to learn and face challenges. He stands out for his discipline, commitment, and ability to apply his knowledge in practice."',
-      t2_author: 'Julian Cañar',
-      t2_role: 'Systems Engineer / Freelance',
-      t3_text: '"Daniel proved to be a serious, responsible professional committed to his work. He stood out for his analytical skills, his clarity in communicating information, and his focus on providing useful solutions. He is a reliable and organized person who is easy to work with."',
-      t3_author: 'Sandra Muncayo',
-      t3_role: 'Doctor / Head of Health Services, Red Medicron',
     },
     contact: {
-      title: 'Contact',
-      kicker: 'Let\'s talk',
-      intro: 'If you have an idea, proposal, or project in mind, you can write to me.',
-      primary_note: 'The form is the main channel of contact.',
-      form_title: 'Send message',
-      form_name_label: 'Name *',
-      form_email_label: 'Email *',
-      form_subject_label: 'Subject',
-      form_message_label: 'Message *',
-      form_submit_label: 'Send message',
-      form_sending_label: 'Sending...',
-      form_success: 'Message sent. I will reply soon.',
-      form_reset: 'Go back',
-      form_error: 'Message could not be sent. Please try again in a few minutes.',
-      form_error_required: 'Please complete name, email, and message to continue.',
-      c2_title: 'LinkedIn',
-      c2_desc: 'Professional contact and networking.',
-      c2_href: 'https://www.linkedin.com/in/daniel-perez-blank',
-      c2_text: 'linkedin.com/in/daniel-perez-blank',
-      c3_title: 'GitHub',
-      c3_desc: 'Repository for projects and experiments.',
-      c3_href: 'https://github.com/Whatfck',
-      c3_text: 'github.com/Whatfck',
-      note1: 'Available for freelance and remote collaborations.',
-      note2: 'Estimated response time: 24 to 48 hours.',
+      title: 'DIRECT CONTACT',
+      kicker: '04 / COMMUNICATION',
+      intro: 'Open to opportunities in Cloud Engineering, Backend, and DevOps.',
+      email: 'contacto@danielperez.dev',
+      location: 'Pasto, Nariño, Colombia · Global Remote',
+      github: 'https://github.com/Whatfck',
     },
     footer: {
-      rights: 'All rights reserved.',
-      more_about_label: 'More about me',
-      more_about_href: 'https://linktr.ee/danielperzz'
-    }
-  }
-};
+      rights: '© 2026 Daniel Pérez. Built with rigor and clean systems.',
+    },
+  },
+}
 
-export const getDictionary = (locale: Locale): Dictionary => dictionaries[locale] || dictionaries.en;
+export const getDictionary = (locale: Locale): Dictionary => dictionaries[locale] || dictionaries.en

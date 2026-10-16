@@ -1,14 +1,27 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import { use } from 'react'
-import { Source_Sans_3 } from 'next/font/google'
+import { Space_Grotesk, Inter, IBM_Plex_Mono } from 'next/font/google'
 import '@fortawesome/fontawesome-free/css/all.min.css'
-import '../../styles/globals.css'
+import '../globals.css'
 import { getDictionary, Locale } from '@/lib/dictionaries'
 
-const sourceSans = Source_Sans_3({ 
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+  display: 'swap',
+})
+
+const inter = Inter({
   subsets: ['latin'],
   variable: '--font-source-sans',
+  display: 'swap',
+})
+
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  variable: '--font-mono',
   display: 'swap',
 })
 
@@ -16,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Loc
   const { lang } = await params
   const dict = getDictionary(lang)
   return {
-    title: `${dict.hero.name} | Portafolio`,
+    title: `${dict.hero.name} | Portafolio — Backend & Cloud`,
     description: dict.hero.copy,
   }
 }
@@ -31,9 +44,9 @@ export default function RootLayout({
   const { lang } = use(params)
 
   return (
-    <html lang={lang} className={`${sourceSans.variable}`} suppressHydrationWarning>
+    <html lang={lang} className={`${spaceGrotesk.variable} ${inter.variable} ${ibmPlexMono.variable}`} suppressHydrationWarning>
       <head>
-        <link rel="icon" type="image/svg+xml" href="/favicon-white.svg" sizes="any" />
+        <link rel="icon" type="image/svg+xml" href="/favicon-black.svg" sizes="any" />
         <Script id="theme-init" strategy="beforeInteractive">
           {`(() => {
             try {
